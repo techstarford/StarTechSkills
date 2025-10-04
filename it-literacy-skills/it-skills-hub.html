@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Literacy Hub | Macford Skills</title>
+    <meta name="description" content="Master essential IT skills including Microsoft Office, cybersecurity, computer basics, and productivity tools with our free and premium courses">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ASSETS/IMAGES/icons/starford-tech-box-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ===== Global Variables & Reset ===== */
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --primary-light: #4895ef;
+            --secondary: #f72585;
+            --accent: #4cc9f0;
+            --dark: #1a1a2e;
+            --dark-gray: #333;
+            --medium-gray: #666;
+            --light-gray: #e0e0e0;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --success: #38b000;
+            --warning: #ff9e00;
+            --danger: #ef233c;
+            
+            --header-height: 80px;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* ===== Utility Classes ===== */
+        .container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #d91a6a;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        /* ===== Header & Navigation ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--dark);
+        }
+        
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            margin-right: 30px;
+        }
+        
+        .nav-links li {
+            position: relative;
+            margin-left: 25px;
+        }
+        
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links li a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links li a i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+        
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 220px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dropdown-menu li a {
+            padding: 10px 20px;
+            display: block;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .dropdown-menu li a:hover {
+            color: var(--primary);
+            background: rgba(67, 97, 238, 0.05);
+        }
+        
+        /* Mobile Navigation Toggle */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Search & Auth */
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-right: 20px;
+        }
+        
+        .search-box input {
+            padding: 10px 15px 10px 40px;
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            outline: none;
+            width: 200px;
+            transition: var(--transition);
+        }
+        
+        .search-box input:focus {
+            border-color: var(--primary);
+            width: 250px;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--medium-gray);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 320px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+            overflow-y: auto;
+            padding: 30px;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .mobile-nav-links li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-nav-links li a {
+            display: block;
+            padding: 12px 0;
+            font-weight: 600;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .mobile-dropdown {
+            padding-left: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+        
+        .mobile-dropdown li a {
+            padding: 8px 0;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .mobile-dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* ===== IT Literacy Hero ===== */
+        .it-hero {
+            background: linear-gradient(135deg, #0f4c75, #3282b8);
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .it-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+        
+        .it-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .it-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .it-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-btns .btn {
+            background: var(--white);
+            color: var(--primary-dark);
+            min-width: 180px;
+        }
+        
+        .hero-btns .btn-outline {
+            background: transparent;
+            border-color: var(--white);
+            color: var(--white);
+        }
+        
+        .hero-btns .btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-btns .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+        
+        /* Hero Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            bottom: -50px;
+            width: 500px;
+            animation: float 6s ease-in-out infinite;
+            display: none; /* Hidden on mobile */
+        }
+        
+        /* ===== Skill Areas Grid ===== */
+        .skill-areas {
+            background-color: #f9f9f9;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .skill-img {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .skill-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .skill-content {
+            padding: 25px;
+        }
+        
+        .skill-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .skill-content p {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .skill-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        .skill-stats span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-stats i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+        
+        /* ===== Popular Resources ===== */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .resource-img {
+            height: 180px;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .resource-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .resource-content {
+            padding: 25px;
+        }
+        
+        .resource-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .resource-content p {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        .resource-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-meta i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+        
+        /* ===== Learning Paths ===== */
+        .learning-paths {
+            background-color: #f9f9f9;
+        }
+        
+        .paths-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .path-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .path-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .path-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .path-title {
+            display: flex;
+            align-items: center;
+        }
+        
+        .path-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            font-weight: 700;
+            margin-right: 15px;
+        }
+        
+        .path-header h3 {
+            font-size: 1.3rem;
+        }
+        
+        .path-toggle {
+            font-size: 1.2rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .path-item.active .path-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .path-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .path-item.active .path-content {
+            max-height: 1000px;
+        }
+        
+        .path-steps {
+            padding-left: 55px;
+        }
+        
+        .path-step {
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-left: 2px solid var(--light-gray);
+            padding-left: 30px;
+        }
+        
+        .path-step:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-left: 2px solid transparent;
+        }
+        
+        .path-step::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid var(--white);
+        }
+        
+        .path-step h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .path-step p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+        }
+        
+        /* ===== Software Tools ===== */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        
+        .tool-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .tool-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .tool-card p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== Testimonials ===== */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--dark-gray);
+            font-size: 1.05rem;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            line-height: 1;
+            font-family: serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: var(--warning);
+            margin-top: 5px;
+        }
+        
+        /* ===== Newsletter ===== */
+        .newsletter {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: var(--white);
+            padding: 70px 40px;
+            border-radius: var(--border-radius);
+            margin: 80px auto;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .newsletter::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            padding: 0 30px;
+            background: var(--dark);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form button:hover {
+            background: #111;
+        }
+        
+        /* ===== Footer ===== */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%231a1a2e" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%231a1a2e" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a1a2e"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom a {
+            color: var(--accent);
+        }
+        
+        /* ===== Back to Top Button ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 1200px) {
+            .it-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-image {
+                width: 400px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .search-box {
+                display: none;
+            }
+            
+            .hero-image {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .it-hero {
+                padding: 150px 0 80px;
+            }
+            
+            .it-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .it-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                border-radius: var(--border-radius);
+            }
+            
+            .newsletter-form input {
+                border-radius: var(--border-radius);
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: var(--border-radius);
+                padding: 15px;
+                width: 100%;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .path-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .path-title {
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .it-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .mobile-nav {
+                width: 280px;
+            }
+            
+            .path-steps {
+                padding-left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="/ASSETS/IMAGES/icons/starford.png" alt="Macford Skills Logo">
+                Starford<span>Tech</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Skills Hubs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="graphics.html"><i class="fas fa-paint-brush"></i> Graphics Design</a></li>
+                            <li><a href="it.html" class="active"><i class="fas fa-laptop"></i> IT Literacy</a></li>
+                            <li><a href="programming.html"><i class="fas fa-code"></i> Programming</a></li>
+                            <li><a href="video.html"><i class="fas fa-video"></i> Videography</a></li>
+                            <li><a href="photo.html"><i class="fas fa-camera"></i> Photography</a></li>
+                            <li><a href="repair.html"><i class="fas fa-tools"></i> Tech Repair</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="showcase.html">Showcase</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog-page1.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search tutorials...">
+                    </div>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                </div>
+            </nav>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">MacfordSkills</a>
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="#">Skills Hubs</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="graphics.html">Graphics Design</a></li>
+                    <li><a href="it.html" class="active">IT Literacy</a></li>
+                    <li><a href="programming.html">Programming</a></li>
+                    <li><a href="video.html">Videography</a></li>
+                    <li><a href="photo.html">Photography</a></li>
+                    <li><a href="repair.html">Tech Repair</a></li>
+                </ul>
+            </li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="showcase.html">Showcase</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- IT Literacy Hero Section -->
+    <section class="it-hero">
+        <div class="it-hero-content" data-aos="fade-up">
+            <h1>Master Essential IT Skills for the Digital Age</h1>
+            <p>From computer basics to advanced productivity tools - gain the technical skills needed to thrive in today's workplace.</p>
+            <div class="hero-btns">
+                <a href="#skills" class="btn">Explore IT Skills</a>
+                <a href="#resources" class="btn btn-outline">Get Free Resources</a>
+            </div>
+        </div>
+        
+        <img src="it-hero-image.png" alt="IT literacy illustration" class="hero-image">
+    </section>
+
+    <!-- Skill Areas Section -->
+    <section class="section skill-areas" id="skills">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Key IT Skill Areas</h2>
+                <p>Develop competencies across these essential digital literacy domains</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-img" style="background-color: #2e86de;">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h3>Microsoft Office Mastery</h3>
+                        <p>Become proficient in Word, Excel, PowerPoint and Outlook for professional document creation, data analysis and presentations.</p>
+                        <a href="#" class="btn">Learn Office Skills</a>
+                        <div class="skill-stats">
+                            <span><i class="fas fa-video"></i> 38 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 22 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="skill-img" style="background-color: #10ac84;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h3>Cybersecurity Basics</h3>
+                        <p>Protect yourself online with password management, phishing detection, and secure browsing practices.</p>
+                        <a href="#" class="btn">Learn Security</a>
+                        <div class="skill-stats">
+                            <span><i class="fas fa-video"></i> 15 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 8 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-img" style="background-color: #ff9f43;">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h3>Cloud Computing</h3>
+                        <p>Master Google Workspace, Microsoft 365, file sharing and collaboration tools for remote work.</p>
+                        <a href="#" class="btn">Explore Cloud Tools</a>
+                        <div class="skill-stats">
+                            <span><i class="fas fa-video"></i> 24 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 12 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-img" style="background-color: #5f27cd;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h3>Data Literacy</h3>
+                        <p>Understand data concepts, visualization, and basic analysis with Excel and other tools.</p>
+                        <a href="#" class="btn">Learn Data Skills</a>
+                        <div class="skill-stats">
+                            <span><i class="fas fa-video"></i> 18 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 5 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="skill-img" style="background-color: #ff6b6b;">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h3>Computer Fundamentals</h3>
+                        <p>Learn hardware basics, operating systems, file management and troubleshooting.</p>
+                        <a href="#" class="btn">Master Basics</a>
+                        <div class="skill-stats">
+                            <span><i class="fas fa-video"></i> 22 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 15 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-img" style="background-color: #01a3a4;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h3>Mobile Productivity</h3>
+                        <p>Maximize smartphones and tablets for work with essential apps and workflows.</p>
+                        <a href="#" class="btn">Boost Mobile Skills</a>
+                        <div class="skill-stats">
+                            <span><i class="fas fa-video"></i> 14 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 7 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Resources -->
+    <section class="section" id="resources">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Essential IT Resources</h2>
+                <p>Free downloads and cheat sheets to accelerate your IT learning</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="resource-img">
+                        <img src="resource-excel.jpg" alt="Excel Cheat Sheet">
+                        <span class="resource-badge">Free</span>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Excel Formulas Cheat Sheet</h3>
+                        <p>All essential formulas with examples for quick reference. Print-friendly PDF format.</p>
+                        <a href="#" class="btn">Download Now</a>
+                        <div class="resource-meta">
+                            <span><i class="fas fa-download"></i> 3,892</span>
+                            <span><i class="fas fa-file"></i> PDF</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="resource-img">
+                        <img src="resource-cyber.jpg" alt="Cybersecurity Guide">
+                        <span class="resource-badge">Free</span>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Cybersecurity Best Practices</h3>
+                        <p>Complete guide to protecting your digital identity and devices from threats.</p>
+                        <a href="#" class="btn">Download Now</a>
+                        <div class="resource-meta">
+                            <span><i class="fas fa-download"></i> 2,154</span>
+                            <span><i class="fas fa-file"></i> PDF</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="resource-img">
+                        <img src="resource-shortcuts.jpg" alt="Shortcuts Guide">
+                        <span class="resource-badge">Premium</span>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Keyboard Shortcuts Master List</h3>
+                        <p>300+ shortcuts for Windows, Mac, Office and browsers to boost productivity.</p>
+                        <a href="#" class="btn-secondary">Get Premium</a>
+                        <div class="resource-meta">
+                            <span><i class="fas fa-download"></i> 1,542</span>
+                            <span><i class="fas fa-file"></i> PDF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths -->
+    <section class="section learning-paths">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Structured Learning Paths</h2>
+                <p>Follow our step-by-step roadmaps to build IT skills systematically</p>
+            </div>
+            
+            <div class="paths-container">
+                <div class="path-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="path-header">
+                        <div class="path-title">
+                            <div class="path-number">1</div>
+                            <h3>Digital Literacy Fundamentals</h3>
+                        </div>
+                        <div class="path-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="path-content">
+                        <div class="path-steps">
+                            <div class="path-step">
+                                <h4>Computer Basics</h4>
+                                <p>Learn hardware components, operating systems, and file management.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Internet Essentials</h4>
+                                <p>Master browsing, searching, and online communication tools.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Productivity Software</h4>
+                                <p>Introduction to word processing, spreadsheets and presentations.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Digital Security</h4>
+                                <p>Password management, phishing awareness and safe browsing.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 20px;">Start Fundamentals Path</a>
+                    </div>
+                </div>
+                
+                <div class="path-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="path-header">
+                        <div class="path-title">
+                            <div class="path-number">2</div>
+                            <h3>Office Productivity Professional</h3>
+                        </div>
+                        <div class="path-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="path-content">
+                        <div class="path-steps">
+                            <div class="path-step">
+                                <h4>Advanced Word</h4>
+                                <p>Styles, templates, mail merge and document collaboration.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Excel Power User</h4>
+                                <p>Formulas, pivot tables, data visualization and analysis.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Effective Presentations</h4>
+                                <p>Design principles, animations and delivery techniques in PowerPoint.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Email Management</h4>
+                                <p>Advanced Outlook features for productivity and organization.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 20px;">Start Office Path</a>
+                    </div>
+                </div>
+                
+                <div class="path-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="path-header">
+                        <div class="path-title">
+                            <div class="path-number">3</div>
+                            <h3>Modern Workplace Technology</h3>
+                        </div>
+                        <div class="path-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="path-content">
+                        <div class="path-steps">
+                            <div class="path-step">
+                                <h4>Cloud Collaboration</h4>
+                                <p>Google Workspace, Microsoft 365 and file sharing platforms.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Remote Work Tools</h4>
+                                <p>Video conferencing, project management and virtual collaboration.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Data Literacy</h4>
+                                <p>Understanding and working with data in business contexts.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>IT Troubleshooting</h4>
+                                <p>Diagnosing and solving common technical issues independently.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 20px;">Start Workplace Path</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Tools -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Essential Software Tools</h2>
+                <p>Master the applications used in modern workplaces</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tool-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Microsoft Office</h3>
+                    <p>The industry standard for productivity software.</p>
+                </div>
+                
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="tool-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>Google Workspace</h3>
+                    <p>Cloud-based collaboration and productivity suite.</p>
+                </div>
+                
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tool-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Zoom/Teams</h3>
+                    <p>Video conferencing and virtual meeting platforms.</p>
+                </div>
+                
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tool-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Trello/Asana</h3>
+                    <p>Project management and task organization tools.</p>
+                </div>
+                
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="tool-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Storage</h3>
+                    <p>Google Drive, OneDrive and Dropbox for file sharing.</p>
+                </div>
+                
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tool-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Password Managers</h3>
+                    <p>LastPass, 1Password for secure credential management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Success Stories</h2>
+                <p>How our IT literacy courses transformed careers</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-text">
+                        After completing the Excel courses, I automated reports that used to take me 8 hours each week. My manager was so impressed I got promoted to data analyst within 6 months!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="testimonial-4.jpg" alt="Raj P.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Raj P.</h4>
+                            <p>Data Analyst</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="testimonial-text">
+                        The cybersecurity course helped me identify a phishing attempt that targeted our small business. We avoided what could have been a devastating financial loss.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="testimonial-5.jpg" alt="Maria G.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Maria G.</h4>
+                            <p>Small Business Owner</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-text">
+                        At 58, I was nervous about technology but the computer basics course gave me confidence. Now I help my grandchildren with their homework using the skills I learned!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="testimonial-6.jpg" alt="Robert T.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Robert T.</h4>
+                            <p>Retiree</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="container">
+        <div class="newsletter" data-aos="fade-up">
+            <div class="newsletter-content">
+                <h2>Get Weekly Tech Tips & Free Resources</h2>
+                <p>Join 15,000+ learners improving their digital skills!</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="skills.html">Skills Hubs</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Skill Hubs</h3>
+                    <ul>
+                        <li><a href="graphics.html">Graphics Design</a></li>
+                        <li><a href="it.html">IT Literacy</a></li>
+                        <li><a href="programming.html">Programming</a></li>
+                        <li><a href="video.html">Videography</a></li>
+                        <li><a href="photo.html">Photography</a></li>
+                        <li><a href="repair.html">Tech Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Skill Street, Digital City</p>
+                        <p><i class="fas fa-envelope"></i> contact@macfordskills.com</p>
+                        <p><i class="fas fa-phone-alt"></i> +1 (234) 567-8910</p>
+                    </div>
+                    
+                    <h3 style="margin-top: 25px;">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Macford Skills. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.querySelectorAll('.mobile-nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('overlay');
+        
+        mobileNavToggle.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+        });
+        
+        // Close mobile menu when clicking on overlay
+        overlay.addEventListener('click', () => {
+            mobileNavToggle.forEach(toggle => {
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        });
+        
+        // Mobile dropdown toggle
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const dropdown = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                dropdown.classList.toggle('active');
+                if (dropdown.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Learning Path Toggle
+        const pathItems = document.querySelectorAll('.path-item');
+        
+        pathItems.forEach(item => {
+            const header = item.querySelector('.path-header');
+            
+            header.addEventListener('click', () => {
+                item.classList.toggle('active');
+                
+                // Close other open paths
+                pathItems.forEach(i => {
+                    if (i !== item && i.classList.contains('active')) {
+                        i.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Newsletter Form Submission
+        const newsletterForm = document.getElementById('newsletterForm');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('input').value;
+                
+                // Here you would typically send the email to your server
+                // For demo purposes, we'll just show an alert
+                alert(`Thank you for subscribing with ${email}! You'll receive our next tech tips.`);
+                newsletterForm.reset();
+            });
+        }
+        
+        // Sticky Header on Scroll
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.height = '70px';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.height = '80px';
+            }
+        });
+    </script>
+</body>
+</html>

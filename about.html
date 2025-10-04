@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Macford Skills | Empowering Digital Creators</title>
+    <meta name="description" content="Learn about Macford Skills - our mission to democratize digital education and help people turn skills into income">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== Global Variables & Reset ===== */
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --primary-light: #4895ef;
+            --secondary: #f72585;
+            --accent: #4cc9f0;
+            --dark: #1a1a2e;
+            --dark-gray: #333;
+            --medium-gray: #666;
+            --light-gray: #e0e0e0;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --success: #38b000;
+            --warning: #ff9e00;
+            --danger: #ef233c;
+            
+            --header-height: 80px;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* ===== Utility Classes ===== */
+        .container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 120px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: var(--transition);
+            white-space: nowrap;
+            gap: 10px;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #d91a6a;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        /* ===== Enhanced Header & Navigation ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo img {
+            height: 45px;
+            margin-right: 12px;
+        }
+        
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            margin-right: 30px;
+        }
+        
+        .nav-links li {
+            position: relative;
+            margin-left: 25px;
+        }
+        
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        .nav-links li a:hover {
+            color: var(--primary);
+            background: rgba(67, 97, 238, 0.1);
+        }
+        
+        .nav-links li a i {
+            margin-left: 8px;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 240px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 12px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dropdown-menu li a {
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+            border-radius: 0;
+        }
+        
+        .dropdown-menu li a i {
+            margin-right: 12px;
+            font-size: 1rem;
+            color: var(--primary);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .dropdown-menu li a:hover {
+            color: var(--primary);
+            background: rgba(67, 97, 238, 0.05);
+            padding-left: 28px;
+        }
+        
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            padding: 12px 18px 12px 42px;
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            outline: none;
+            width: 220px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .search-box input:focus {
+            border-color: var(--primary);
+            width: 260px;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--medium-gray);
+        }
+        
+        /* Mobile Navigation Toggle */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--dark);
+            cursor: pointer;
+            z-index: 1001;
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-toggle:hover {
+            color: var(--primary);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 360px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+            overflow-y: auto;
+            padding: 30px;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .mobile-nav-links li {
+            margin-bottom: 8px;
+        }
+        
+        .mobile-nav-links li a {
+            display: block;
+            padding: 16px 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--light-gray);
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-links li a:hover {
+            color: var(--primary);
+            padding-left: 10px;
+        }
+        
+        .mobile-dropdown {
+            padding-left: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+        
+        .mobile-dropdown li a {
+            padding: 12px 0;
+            font-weight: 500;
+            font-size: 1rem;
+            border-bottom: none;
+        }
+        
+        .mobile-dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        .mobile-dropdown-toggle i {
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-dropdown-toggle.active i {
+            transform: rotate(180deg);
+        }
+        
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* ===== About Page Specific Styles ===== */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 200px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+        
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .story-section {
+            position: relative;
+            padding: 120px 0;
+        }
+        
+        .story-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSg2Nyw5NywyMzgsMC4wMykiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48L3N2Zz4=');
+        }
+        
+        .story-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .story-text {
+            flex: 1;
+        }
+        
+        .story-text h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+            line-height: 1.3;
+        }
+        
+        .story-text p {
+            margin-bottom: 25px;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .story-text p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .story-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .story-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.8s ease;
+        }
+        
+        .story-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .mission-values {
+            background-color: #f9f9f9;
+            padding: 120px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .value-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 50px 40px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .value-card:hover .value-icon {
+            background: var(--primary);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .value-card p {
+            color: var(--medium-gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        .team-section {
+            padding: 100px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 50px;
+        }
+        
+        .team-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .team-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .team-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+            z-index: 1;
+        }
+        
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .team-card:hover .team-img img {
+            transform: scale(1.1);
+        }
+        
+        .team-info {
+            padding: 30px;
+        }
+        
+        .team-info h3 {
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        
+        .team-info p {
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .team-info p:last-of-type {
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            color: var(--dark);
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        
+        .team-social a:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .stat-item {
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .cta-box {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 80px;
+            box-shadow: var(--box-shadow);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSg2Nyw5NywyMzgsMC4wMykiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48L3N2Zz4=');
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .cta-box p {
+            color: var(--medium-gray);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 100px 0 40px;
+            position: relative;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%231a1a2e" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%231a1a2e" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a1a2e"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            transition: var(--transition);
+            font-size: 1.05rem;
+            display: inline-block;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--white);
+            transform: translateX(8px);
+        }
+        
+        .footer-contact p {
+            color: #bbb;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.6;
+        }
+        
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--accent);
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+        
+        .footer-bottom a {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 1200px) {
+            .about-hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section {
+                padding: 100px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .story-content {
+                flex-direction: column;
+            }
+            
+            .story-image {
+                margin-top: 40px;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .about-hero {
+                padding: 180px 0 100px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .cta-box {
+                padding: 60px 30px;
+            }
+            
+            .cta-box h2 {
+                font-size: 2rem;
+            }
+            
+            .mobile-nav {
+                width: 320px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .mobile-nav {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 30px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="ASSETS/IMAGES/icons/starford.png" alt="Macford Skills Logo">
+                Starford<span>Tech</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Skills Hubs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="graphics.html"><i class="fas fa-paint-brush"></i> Graphics Design</a></li>
+                            <li><a href="it.html"><i class="fas fa-laptop"></i> IT Literacy</a></li>
+                            <li><a href="programming.html"><i class="fas fa-code"></i> Programming</a></li>
+                            <li><a href="video.html"><i class="fas fa-video"></i> Videography</a></li>
+                            <li><a href="photo.html"><i class="fas fa-camera"></i> Photography</a></li>
+                            <li><a href="repair.html"><i class="fas fa-tools"></i> Tech Repair</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="showcase.html">Showcase</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="blog-page1.html">Blog</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search tutorials...">
+                    </div>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                </div>
+            </nav>
+            
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">MacfordSkills</a>
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="#">Skills Hubs</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="graphics.html">Graphics Design</a></li>
+                    <li><a href="it.html">IT Literacy</a></li>
+                    <li><a href="programming.html">Programming</a></li>
+                    <li><a href="video.html">Videography</a></li>
+                    <li><a href="photo.html">Photography</a></li>
+                    <li><a href="repair.html">Tech Repair</a></li>
+                </ul>
+            </li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="showcase.html">Showcase</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>Empowering Digital Creators Worldwide</h1>
+            <p>At Macford Skills, we believe everyone deserves access to quality digital education that leads to real income opportunities.</p>
+            <a href="#story" class="btn btn-outline">Our Story</a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+                <p>From humble beginnings to a thriving community of digital creators</p>
+            </div>
+            
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>Founded in 2018 with a simple mission</h3>
+                    <p>Macford Skills began when our founder, Macford Chiwasa, noticed a gap between traditional education and the practical digital skills needed in today's economy. What started as a small YouTube channel teaching basic Photoshop techniques has grown into a comprehensive platform serving over 50,000 monthly learners.</p>
+                    <p>We've helped hundreds transition from complete beginners to professional designers, developers, and content creators. Our secret? Focusing on <strong>real-world applications</strong> rather than just theory, and providing the <strong>templates, tools, and community</strong> needed to succeed.</p>
+                    <p>Today, our team of 12 passionate educators continues this mission, constantly updating our curriculum to match industry trends and employer needs.</p>
+                </div>
+                <div class="story-image">
+                    <img src="ASSETS/IMAGES/Macford-portrait-about-story.jpg" alt="Macford Skills early days">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section class="mission-values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission & Values</h2>
+                <p>What drives everything we do at Macford Skills</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Democratize Education</h3>
+                    <p>We break down barriers to learning by offering free resources and affordable premium content to anyone with internet access.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Practical Focus</h3>
+                    <p>Every lesson is designed with real-world application in mind. We teach skills that translate directly to income opportunities.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3>Community First</h3>
+                    <p>Learning is better together. Our supportive community provides feedback, collaboration, and networking opportunities.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Stay Current</h3>
+                    <p>We continuously update our content to reflect the latest tools, techniques, and industry standards.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Empower Creators</h3>
+                    <p>Our ultimate goal is helping you turn skills into sustainable income through freelancing, employment, or entrepreneurship.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Global Impact</h3>
+                    <p>We're proud to serve learners from over 120 countries, with special initiatives for underserved communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet The Team</h2>
+                <p>The passionate educators behind Macford Skills</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="ASSETS/IMAGES/team-macford.jpg" alt="Macford Chiwasa">
+                    </div>
+                    <div class="team-info">
+                        <h3>Macford Chiwasa</h3>
+                        <p>Founder & Lead Instructor</p>
+                        <p>10+ years in digital education</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="team-sarah.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="team-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>Head of Design Education</p>
+                        <p>Former Adobe Certified Instructor</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="team-david.jpg" alt="David Kim">
+                    </div>
+                    <div class="team-info">
+                        <h3>David Kim</h3>
+                        <p>Lead Developer Instructor</p>
+                        <p>Full-stack developer since 2012</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="team-aminata.jpg" alt="Aminata Diallo">
+                    </div>
+                    <div class="team-info">
+                        <h3>Aminata Diallo</h3>
+                        <p>Community Manager</p>
+                        <p>Connecting learners worldwide</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>By The Numbers</h2>
+                <p>Our impact in the digital education space</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Monthly Learners</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">Countries Reached</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">1.2M</div>
+                    <div class="stat-label">Resources Downloaded</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">3.5K</div>
+                    <div class="stat-label">Success Stories</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Ready to Start Your Digital Skills Journey?</h2>
+                    <p>Join thousands of learners transforming their lives through practical digital education</p>
+                    <div class="hero-btns">
+                        <a href="resources.html" class="btn">Explore Free Resources</a>
+                        <a href="community.html" class="btn btn-outline">Join Our Community</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="skills.html">Skills Hubs</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Skill Hubs</h3>
+                    <ul>
+                        <li><a href="graphics.html">Graphics Design</a></li>
+                        <li><a href="it.html">IT Literacy</a></li>
+                        <li><a href="programming.html">Programming</a></li>
+                        <li><a href="video.html">Videography</a></li>
+                        <li><a href="photo.html">Photography</a></li>
+                        <li><a href="repair.html">Tech Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Skill Street, Digital City</p>
+                        <p><i class="fas fa-envelope"></i> contact@macfordskills.com</p>
+                        <p><i class="fas fa-phone-alt"></i> +1 (234) 567-8910</p>
+                    </div>
+                    
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Macford Skills. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.querySelectorAll('.mobile-nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('overlay');
+        
+        mobileNavToggle.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+                
+                // Toggle icon between bars and times
+                const icon = toggle.querySelector('i');
+                if (mobileNav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking on overlay
+        overlay.addEventListener('click', () => {
+            mobileNavToggle.forEach(toggle => {
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.querySelector('i').classList.remove('fa-times');
+                toggle.querySelector('i').classList.add('fa-bars');
+            });
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        });
+        
+        // Mobile dropdown toggle
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const dropdown = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                toggle.classList.toggle('active');
+                dropdown.classList.toggle('active');
+                
+                if (dropdown.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Sticky Header on Scroll
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.height = '70px';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.height = '80px';
+            }
+        });
+        
+        // Search functionality
+        const searchBox = document.querySelector('.search-box input');
+        if (searchBox) {
+            searchBox.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    alert(`Searching for: ${searchBox.value}`);
+                    // In a real implementation, this would redirect to search results
+                }
+            });
+        }
+    </script>
+</body>
+</html>

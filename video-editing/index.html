@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editing Mastery | StarfordSkills</title>
+    <meta name="description" content="Learn professional video editing skills with our comprehensive tutorials, resources, and project-based learning approach.">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ===== Global Variables & Reset ===== */
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --primary-light: #4895ef;
+            --secondary: #f72585;
+            --accent: #4cc9f0;
+            --dark: #1a1a2e;
+            --dark-gray: #333;
+            --medium-gray: #666;
+            --light-gray: #e0e0e0;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --success: #38b000;
+            --warning: #ff9e00;
+            --danger: #ef233c;
+            
+            --header-height: 80px;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* ===== Utility Classes ===== */
+        .container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #d91a6a;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        /* ===== Header & Navigation ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--dark);
+        }
+        
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            margin-right: 30px;
+        }
+        
+        .nav-links li {
+            position: relative;
+            margin-left: 25px;
+        }
+        
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links li a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links li a i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        
+        /* Enhanced Dropdown Menu - SkillsHub Style */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 220px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .dropdown-side {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background: var(--white);
+            width: 220px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        /* Desktop Hover Effects */
+        @media (min-width: 993px) {
+            .nav-links li:hover > .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            .dropdown-menu li:hover > .dropdown-side {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+            }
+            
+            .nav-links li:hover > a i.fa-chevron-down {
+                transform: rotate(180deg);
+            }
+            
+            .dropdown-menu li:hover > a i.fa-chevron-right {
+                transform: rotate(90deg);
+            }
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        
+        .dropdown-menu li a {
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .dropdown-menu li a:hover {
+            color: var(--primary);
+            background: rgba(67, 97, 238, 0.05);
+        }
+        
+        /* Mobile Navigation Toggle */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Search & Auth */
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-right: 20px;
+        }
+        
+        .search-box input {
+            padding: 10px 15px 10px 40px;
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            outline: none;
+            width: 200px;
+            transition: var(--transition);
+        }
+        
+        .search-box input:focus {
+            border-color: var(--primary);
+            width: 250px;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--medium-gray);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 320px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+            overflow-y: auto;
+            padding: 30px;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+            transition: right 0.3s ease;
+        }
+        
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .mobile-nav-links li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-nav-links li a {
+            display: block;
+            padding: 12px 0;
+            font-weight: 600;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .mobile-dropdown {
+            padding-left: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+        
+        .mobile-dropdown li a {
+            padding: 8px 0;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .mobile-dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* ===== Page Specific Styles ===== */
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 120px 0 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .breadcrumb-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .breadcrumb-links a {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb-links a:hover {
+            color: var(--primary);
+        }
+        
+        .breadcrumb-links span {
+            margin: 0 10px;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-links .current {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Page Layout */
+        .page-container {
+            display: flex;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .main-content {
+            flex: 1;
+            width: 70%;
+        }
+        
+        .sidebar {
+            width: 30%;
+            max-width: 350px;
+        }
+        
+        /* Hero Section */
+        .video-hero {
+            background: linear-gradient(135deg, #3a0ca3, #4361ee);
+            color: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .video-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .video-hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+        
+        .video-hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .video-hero-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .video-hero-stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .video-hero-stat i {
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        
+        .video-hero-stat span {
+            font-size: 0.9rem;
+        }
+        
+        /* Progress Section */
+        .progress-section {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .progress-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: var(--light-gray);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 5px;
+            width: 30%; /* This would be dynamic based on user progress */
+        }
+        
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        /* Modules Section */
+        .modules-section {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+        
+        .module {
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .module-header {
+            padding: 20px;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .module-header:hover {
+            background: #f0f0f0;
+        }
+        
+        .module-header.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .module-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .module-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+        
+        .module-header.active .module-icon {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        .module-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .module-content.active {
+            max-height: 1000px;
+        }
+        
+        .lesson-list {
+            padding: 20px;
+        }
+        
+        .lesson-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .lesson-item:last-child {
+            border-bottom: none;
+        }
+        
+        .lesson-checkbox {
+            margin-right: 15px;
+        }
+        
+        .lesson-info {
+            flex: 1;
+        }
+        
+        .lesson-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .lesson-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+        }
+        
+        .lesson-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .lesson-action .btn {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+        
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .instructor-card {
+            text-align: center;
+        }
+        
+        .instructor-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background: #eee;
+            overflow: hidden;
+        }
+        
+        .instructor-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .instructor-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .instructor-title {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .instructor-stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .instructor-stat {
+            text-align: center;
+        }
+        
+        .instructor-stat-value {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+        
+        .instructor-stat-label {
+            font-size: 0.8rem;
+            color: var(--medium-gray);
+        }
+        
+        .resources-list {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .resource-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .resource-item:last-child {
+            border-bottom: none;
+        }
+        
+        .resource-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+        
+        .resource-info {
+            flex: 1;
+        }
+        
+        .resource-title {
+            font-weight: 600;
+            margin-bottom: 3px;
+            font-size: 0.95rem;
+        }
+        
+        .resource-meta {
+            font-size: 0.8rem;
+            color: var(--medium-gray);
+        }
+        
+        .resource-action a {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* Tools Section */
+        .tools-section {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .tool-card {
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+            border-color: var(--primary-light);
+        }
+        
+        .tool-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .tool-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .tool-description {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+        }
+        
+        /* Community Section */
+        .community-section {
+            background: linear-gradient(135deg, #4cc9f0, #4361ee);
+            color: var(--white);
+            padding: 50px 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .community-section h2 {
+            margin-bottom: 20px;
+        }
+        
+        .community-section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%231a1a2e" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%231a1a2e" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a1a2e"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom a {
+            color: var(--accent);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 1200px) {
+            .page-container {
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .search-box {
+                display: none;
+            }
+            
+            .page-container {
+                flex-direction: column;
+            }
+            
+            .main-content, .sidebar {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .video-hero h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .video-hero {
+                padding: 30px;
+            }
+            
+            .video-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .video-hero-stats {
+                flex-wrap: wrap;
+            }
+            
+            .module-header {
+                padding: 15px;
+            }
+            
+            .module-title {
+                gap: 10px;
+            }
+            
+            .lesson-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .lesson-action {
+                margin-top: 10px;
+                align-self: flex-end;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .video-hero {
+                text-align: center;
+            }
+            
+            .video-hero-stats {
+                justify-content: center;
+            }
+            
+            .mobile-nav {
+                width: 280px;
+            }
+            
+            .community-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="IMAGES/SVG LOGO.svg" alt="Macford Skills Logo">
+                <span>StarfordSkills</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Skills Hubs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="graphicsdesignhub.html"><i class="fas fa-paint-brush"></i> Graphics Design</a></li>
+                            <li><a href="it.html"><i class="fas fa-laptop"></i> IT Literacy</a></li>
+                            <li><a href="programming.html"><i class="fas fa-code"></i> Programming</a></li>
+                            <li><a href="video.html"><i class="fas fa-video"></i> Videography</a></li>
+                            <li><a href="photo.html"><i class="fas fa-camera"></i> Photography</a></li>
+                            <li><a href="repair.html"><i class="fas fa-tools"></i> Tech Repair</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="resources.html">Resources <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="graphicsresources.html">Graphics Design <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="photoshop.html"><i class="fas fa-image"></i> Adobe Photoshop</a></li>
+                                    <li><a href="illustrator.html"><i class="fas fa-pen-fancy"></i> Illustrator</a></li>
+                                    <li><a href="figma.html"><i class="fas fa-pencil-ruler"></i> Figma</a></li>
+                                    <li><a href="canva.html"><i class="fas fa-palette"></i> Canva</a></li>
+                                    <li><a href="uiux.html"><i class="fas fa-mobile-alt"></i> UI/UX Design</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">IT Literacy <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="basic-computing.html"><i class="fas fa-desktop"></i> Basic Computing</a></li>
+                                    <li><a href="office.html"><i class="fas fa-file-word"></i> Microsoft Office</a></li>
+                                    <li><a href="internet.html"><i class="fas fa-globe"></i> Internet Skills</a></li>
+                                    <li><a href="cybersecurity.html"><i class="fas fa-shield-alt"></i> Cybersecurity</a></li>
+                                    <li><a href="cloud.html"><i class="fas fa-cloud"></i> Cloud Computing</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Programming <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="web-development.html"><i class="fas fa-code"></i> Web Development</a></li>
+                                    <li><a href="python.html"><i class="fab fa-python"></i> Python</a></li>
+                                    <li><a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a></li>
+                                    <li><a href="mobile-apps.html"><i class="fas fa-mobile"></i> Mobile Apps</a></li>
+                                    <li><a href="data-science.html"><i class="fas fa-database"></i> Data Science</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="all-resources.html">All Resources</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="showcase.html">Showcase</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog-page1.html">Blog</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search tutorials...">
+                    </div>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                </div>
+            </nav>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">MacfordSkills</a>
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="#">Skills Hubs</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="graphics.html">Graphics Design</a></li>
+                    <li><a href="it.html">IT Literacy</a></li>
+                    <li><a href="programming.html">Programming</a></li>
+                    <li><a href="video.html">Videography</a></li>
+                    <li><a href="photo.html">Photography</a></li>
+                    <li><a href="repair.html">Tech Repair</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="resources.html">Resources</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="graphicsresources.html">Graphics Design</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="photoshop.html">Adobe Photoshop</a></li>
+                            <li><a href="illustrator.html">Illustrator</a></li>
+                            <li><a href="figma.html">Figma</a></li>
+                            <li><a href="canva.html">Canva</a></li>
+                            <li><a href="uiux.html">UI/UX Design</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="#">IT Literacy</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="basic-computing.html">Basic Computing</a></li>
+                            <li><a href="office.html">Microsoft Office</a></li>
+                            <li><a href="internet.html">Internet Skills</a></li>
+                            <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                            <li><a href="cloud.html">Cloud Computing</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="#">Programming</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="python.html">Python</a></li>
+                            <li><a href="javascript.html">JavaScript</a></li>
+                            <li><a href="mobile-apps.html">Mobile Apps</a></li>
+                            <li><a href="data-science.html">Data Science</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="all-resources.html">All Resources</a></li>
+                </ul>
+            </li>
+            <li><a href="showcase.html">Showcase</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-links">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="index.html#skills">Skills Hubs</a>
+                <span>/</span>
+                <span class="current">Video Editing</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container page-container">
+        <div class="main-content">
+            <!-- Video Hero Section -->
+            <section class="video-hero" data-aos="fade-up">
+                <div class="video-hero-content">
+                    <span class="video-hero-badge">Premium Course</span>
+                    <h1>Master Video Editing</h1>
+                    <p>Go from beginner to professional video editor with our comprehensive course. Learn industry-standard tools, techniques, and workflows to create stunning videos for YouTube, social media, and professional clients.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    
+                    <div class="video-hero-stats">
+                        <div class="video-hero-stat">
+                            <i class="fas fa-play-circle"></i>
+                            <span>42 Video Lessons</span>
+                        </div>
+                        <div class="video-hero-stat">
+                            <i class="fas fa-clock"></i>
+                            <span>15+ Hours of Content</span>
+                        </div>
+                        <div class="video-hero-stat">
+                            <i class="fas fa-download"></i>
+                            <span>28 Resources</span>
+                        </div>
+                        <div class="video-hero-stat">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificate of Completion</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section" data-aos="fade-up">
+                <div class="progress-header">
+                    <h3 class="progress-title">Your Progress</h3>
+                    <span>30% Complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <span>6 of 20 lessons completed</span>
+                    <span>4 hours of 15 hours</span>
+                </div>
+            </section>
+
+            <!-- Modules Section -->
+            <section class="modules-section" data-aos="fade-up">
+                <h2 class="section-title">Course Content</h2>
+                
+                <div class="module">
+                    <div class="module-header">
+                        <div class="module-title">
+                            <div class="module-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <h3>Getting Started with Video Editing</h3>
+                        </div>
+                        <span>4 Lessons • 1h 20m</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="lesson-list">
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Introduction to Video Editing</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 15m</span>
+                                        <span><i class="fas fa-download"></i> Resources</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Understanding Video Formats & Codecs</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 22m</span>
+                                        <span><i class="fas fa-download"></i> Cheat Sheet</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Setting Up Your Editing Workspace</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 18m</span>
+                                        <span><i class="fas fa-download"></i> Project File</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Basic Editing Techniques</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 25m</span>
+                                        <span><i class="fas fa-download"></i> Exercise Files</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="module">
+                    <div class="module-header">
+                        <div class="module-title">
+                            <div class="module-icon">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <h3>Adobe Premiere Pro Mastery</h3>
+                        </div>
+                        <span>8 Lessons • 3h 45m</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="lesson-list">
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Premiere Pro Interface Overview</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 20m</span>
+                                        <span><i class="fas fa-download"></i> Shortcuts PDF</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Cutting & Trimming Techniques</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 28m</span>
+                                        <span><i class="fas fa-download"></i> Practice Clips</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Working with Transitions</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 35m</span>
+                                        <span><i class="fas fa-download"></i> Transition Pack</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Color Correction & Grading</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 42m</span>
+                                        <span><i class="fas fa-download"></i> LUTs Pack</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Audio Editing & Mixing</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 38m</span>
+                                        <span><i class="fas fa-download"></i> Sound Effects</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Working with Titles & Graphics</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 32m</span>
+                                        <span><i class="fas fa-download"></i> Title Templates</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Advanced Effects & Motion</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 45m</span>
+                                        <span><i class="fas fa-download"></i> Presets</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Exporting for Different Platforms</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 25m</span>
+                                        <span><i class="fas fa-download"></i> Export Presets</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="module">
+                    <div class="module-header">
+                        <div class="module-title">
+                            <div class="module-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <h3>After Effects for Video Editors</h3>
+                        </div>
+                        <span>5 Lessons • 2h 30m</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="lesson-list">
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Introduction to After Effects</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 30m</span>
+                                        <span><i class="fas fa-download"></i> Project Files</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Creating Motion Graphics</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 40m</span>
+                                        <span><i class="fas fa-download"></i> Asset Pack</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Working with Green Screen</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 35m</span>
+                                        <span><i class="fas fa-download"></i> Backgrounds</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Advanced Compositing</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 30m</span>
+                                        <span><i class="fas fa-download"></i> Assets</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Dynamic Linking with Premiere</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 15m</span>
+                                        <span><i class="fas fa-download"></i> Workflow Guide</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="module">
+                    <div class="module-header">
+                        <div class="module-title">
+                            <div class="module-icon">
+                                <i class="fas fa-youtube"></i>
+                            </div>
+                            <h3>YouTube & Social Media Content</h3>
+                        </div>
+                        <span>3 Lessons • 1h 45m</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="lesson-list">
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Optimizing Videos for YouTube</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 35m</span>
+                                        <span><i class="fas fa-download"></i> Checklist</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Creating Engaging Social Media Content</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 40m</span>
+                                        <span><i class="fas fa-download"></i> Templates</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-checkbox">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                                <div class="lesson-info">
+                                    <div class="lesson-title">Building Your Video Portfolio</div>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-play-circle"></i> Video • 30m</span>
+                                        <span><i class="fas fa-download"></i> Portfolio Guide</span>
+                                    </div>
+                                </div>
+                                <div class="lesson-action">
+                                    <a href="#" class="btn">Start</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools Section -->
+            <section class="tools-section" data-aos="fade-up">
+                <h2 class="section-title">Video Editing Tools You'll Master</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fab fa-adobe"></i>
+                        </div>
+                        <h3 class="tool-name">Adobe Premiere Pro</h3>
+                        <p class="tool-description">Industry-standard video editing software for professional workflows.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fab fa-adobe"></i>
+                        </div>
+                        <h3 class="tool-name">Adobe After Effects</h3>
+                        <p class="tool-description">Motion graphics and visual effects for stunning video enhancements.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3 class="tool-name">DaVinci Resolve</h3>
+                        <p class="tool-description">Professional color grading and editing in a single application.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="tool-name">CapCut</h3>
+                        <p class="tool-description">Powerful mobile and desktop editor perfect for social content.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Section -->
+            <section class="community-section" data-aos="fade-up">
+                <h2>Join Our Video Editors Community</h2>
+                <p>Connect with other learners, get feedback on your projects, and participate in monthly video challenges.</p>
+                <a href="#" class="btn">Join Community</a>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Instructor Widget -->
+            <div class="sidebar-widget" data-aos="fade-left">
+                <h3 class="sidebar-title">Course Instructor</h3>
+                <div class="instructor-card">
+                    <div class="instructor-img">
+                        <img src="instructor.jpg" alt="Michael Rodriguez">
+                    </div>
+                    <h4 class="instructor-name">Michael Rodriguez</h4>
+                    <p class="instructor-title">Professional Video Editor & Educator</p>
+                    <div class="instructor-stats">
+                        <div class="instructor-stat">
+                            <div class="instructor-stat-value">4.9</div>
+                            <div class="instructor-stat-label">Rating</div>
+                        </div>
+                        <div class="instructor-stat">
+                            <div class="instructor-stat-value">2.4K</div>
+                            <div class="instructor-stat-label">Students</div>
+                        </div>
+                        <div class="instructor-stat">
+                            <div class="instructor-stat-value">12</div>
+                            <div class="instructor-stat-label">Courses</div>
+                        </div>
+                    </div>
+                    <p>With over 8 years of experience in video production and editing for major brands, Michael simplifies complex editing techniques for beginners.</p>
+                </div>
+            </div>
+
+            <!-- Resources Widget -->
+            <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">
+                <h3 class="sidebar-title">Download Resources</h3>
+                <ul class="resources-list">
+                    <li class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-title">Keyboard Shortcuts Cheat Sheet</div>
+                            <div class="resource-meta">PDF • 2.4 MB</div>
+                        </div>
+                        <div class="resource-action">
+                            <a href="#"><i class="fas fa-download"></i></a>
+                        </div>
+                    </li>
+                    <li class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-title">Practice Video Clips</div>
+                            <div class="resource-meta">ZIP • 458 MB</div>
+                        </div>
+                        <div class="resource-action">
+                            <a href="#"><i class="fas fa-download"></i></a>
+                        </div>
+                    </li>
+                    <li class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-title">Color Grading LUTs Pack</div>
+                            <div class="resource-meta">ZIP • 15 MB</div>
+                        </div>
+                        <div class="resource-action">
+                            <a href="#"><i class="fas fa-download"></i></a>
+                        </div>
+                    </li>
+                    <li class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-title">Royalty-Free Sound Effects</div>
+                            <div class="resource-meta">ZIP • 82 MB</div>
+                        </div>
+                        <div class="resource-action">
+                            <a href="#"><i class="fas fa-download"></i></a>
+                        </div>
+                    </li>
+                    <li class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-font"></i>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-title">Title Templates Pack</div>
+                            <div class="resource-meta">ZIP • 36 MB</div>
+                        </div>
+                        <div class="resource-action">
+                            <a href="#"><i class="fas fa-download"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Progress Widget -->
+            <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="200">
+                <h3 class="sidebar-title">Your Learning Stats</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 30%;"></div>
+                </div>
+                <div class="progress-text" style="margin-top: 10px;">
+                    <span>30% Complete</span>
+                    <span>6/20 Lessons</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span>Time Spent:</span>
+                        <span>4h 12m</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span>Resources Downloaded:</span>
+                        <span>8</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span>Last Active:</span>
+                        <span>2 days ago</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn" style="width: 100%; margin-top: 20px; text-align: center;">Continue Learning</a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="skills.html">Skills Hubs</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Skill Hubs</h3>
+                    <ul>
+                        <li><a href="graphicsdesignhub.html">Graphics Design</a></li>
+                        <li><a href="itskillshub.html">IT Literacy</a></li>
+                        <li><a href="programming.html">Programming</a></li>
+                        <li><a href="video.html">Videography</a></li>
+                        <li><a href="photo.html">Photography</a></li>
+                        <li><a href="repair.html">Tech Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Skill Street, Digital City</p>
+                        <p><i class="fas fa-envelope"></i> contact@macfordskills.com</p>
+                        <p><i class="fas fa-phone-alt"></i> +1 (234) 567-8910</p>
+                    </div>
+                    
+                    <h3 style="margin-top: 25px;">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Macford Skills. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.querySelectorAll('.mobile-nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('overlay');
+        
+        mobileNavToggle.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+        });
+        
+        // Close mobile menu when clicking on overlay
+        overlay.addEventListener('click', () => {
+            mobileNavToggle.forEach(toggle => {
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        });
+        
+        // Mobile dropdown toggle
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                dropdown.classList.toggle('active');
+                if (dropdown.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Module accordion functionality
+        const moduleHeaders = document.querySelectorAll('.module-header');
+        
+        moduleHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                header.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
+        
+        // Lesson completion toggle
+        const lessonCheckboxes = document.querySelectorAll('.lesson-checkbox');
+        
+        lessonCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', () => {
+                const icon = checkbox.querySelector('i');
+                if (icon.classList.contains('fa-check-circle')) {
+                    icon.classList.remove('fa-check-circle');
+                    icon.classList.add('fa-circle');
+                } else {
+                    icon.classList.remove('fa-circle');
+                    icon.classList.add('fa-check-circle');
+                }
+                
+                // Update progress (this would be connected to a backend in a real application)
+                updateProgress();
+            });
+        });
+        
+        function updateProgress() {
+            // This would calculate progress based on completed lessons
+            // For demo purposes, we'll just simulate it
+            const completed = document.querySelectorAll('.fa-check-circle').length;
+            const total = document.querySelectorAll('.lesson-checkbox i').length;
+            const percentage = Math.round((completed / total) * 100);
+            
+            document.querySelector('.progress-fill').style.width = `${percentage}%`;
+            document.querySelector('.progress-text span:first-child').textContent = `${percentage}% Complete`;
+            document.querySelector('.progress-text span:last-child').textContent = `${completed} of ${total} lessons`;
+            
+            // Update sidebar progress
+            document.querySelectorAll('.progress-fill').forEach(el => {
+                el.style.width = `${percentage}%`;
+            });
+            document.querySelectorAll('.progress-text span:first-child').forEach(el => {
+                el.textContent = `${percentage}% Complete`;
+            });
+            document.querySelectorAll('.progress-text span:last-child').forEach(el => {
+                el.textContent = `${completed}/${total} Lessons`;
+            });
+        }
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Sticky Header on Scroll
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.height = '70px';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.height = '80px';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Starford Tech</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-palette"></i>
+                <span>Starford Tech</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="users.html"><i class="fas fa-users"></i> Users</a>
+                <a href="resources.html"><i class="fas fa-file-image"></i> Resources</a>
+                <a href="blog.html"><i class="fas fa-newspaper"></i> Blog Posts</a>
+                <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="admin-header">
+                <h1>Dashboard Overview</h1>
+                <div class="admin-search">
+                    <input type="text" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #e3f2fd;">
+                        <i class="fas fa-users" style="color: #2196f3;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Users</h3>
+                        <p>1,248</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #e8f5e9;">
+                        <i class="fas fa-file-download" style="color: #4caf50;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Downloads</h3>
+                        <p>3,542</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #fff3e0;">
+                        <i class="fas fa-dollar-sign" style="color: #ff9800;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Revenue</h3>
+                        <p>$8,420</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #f3e5f5;">
+                        <i class="fas fa-file-alt" style="color: #9c27b0;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Blog Posts</h3>
+                        <p>28</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="admin-card">
+                <div class="card-header">
+                    <h2>Recent Activity</h2>
+                    <a href="#" class="btn">View All</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Action</th>
+                            <th>Resource</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>user@example.com</td>
+                            <td>Downloaded</td>
+                            <td>Business Card Template</td>
+                            <td>2 mins ago</td>
+                        </tr>
+                        <tr>
+                            <td>designer@studio.com</td>
+                            <td>Purchased</td>
+                            <td>UI Kit Bundle</td>
+                            <td>15 mins ago</td>
+                        </tr>
+                        <tr>
+                            <td>admin@starfordtech.com</td>
+                            <td>Added</td>
+                            <td>New Blog Post</td>
+                            <td>1 hour ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

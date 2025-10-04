@@ -1,0 +1,18 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a0ca3"/>
+      <stop offset="100%" stop-color="#4cc9f0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Centered Abstract Circuit/Star Hybrid Symbol -->
+  <g transform="translate(20,20)">
+    <path d="M30,30 L50,50 L30,70 L10,50 Z" fill="none" stroke="url(#techGradient)" stroke-width="3"/>
+    <path d="M50,30 L30,50 L50,70 L70,50 Z" fill="none" stroke="url(#techGradient)" stroke-width="3"/>
+    <circle cx="30" cy="50" r="4" fill="url(#techGradient)"/>
+    <circle cx="50" cy="30" r="4" fill="url(#techGradient)"/>
+    <circle cx="50" cy="70" r="4" fill="url(#techGradient)"/>
+    <circle cx="70" cy="50" r="4" fill="url(#techGradient)"/>
+  </g>
+</svg>

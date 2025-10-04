@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Resources Hub | Page 4 | Starford Tech</title>
+    <meta name="description" content="Page 4 of our complete collection of professional design resources - PSDs, flyers, business cards, calendars, tickets, posters and more for Starford Tech students">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;   /* Starford Tech blue */
+            --primary-light: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --accent: #f59e0b;   /* Macford orange */
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light: #f1f5f9;
+            --lighter: #f8fafc;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--lighter);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-md);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover, 
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light);
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .btn-lg {
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .resources-hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 9rem 0 5rem;
+            margin-top: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resources-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .resources-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .resources-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .resources-hero p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-lg);
+            padding-right: 140px;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: #e67e22;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 3rem;
+            position: sticky;
+            top: 100px;
+            z-index: 100;
+        }
+
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .filter-tab {
+            padding: 0.6rem 1.5rem;
+            background: var(--light);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid transparent;
+        }
+
+        .filter-tab:hover {
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .filter-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary-dark);
+        }
+
+        /* Resources Grid */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background: var(--white);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .resource-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .resource-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .resource-card:hover .resource-image img {
+            transform: scale(1.05);
+        }
+
+        .resource-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .resource-badge.free {
+            background: var(--secondary);
+        }
+
+        .resource-content {
+            padding: 1.75rem;
+        }
+
+        .resource-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .resource-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light);
+        }
+
+        .resource-filetype {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .resource-filetype i {
+            font-size: 1.1rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            color: var(--primary-dark);
+        }
+
+        .download-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .download-btn:hover i {
+            transform: translateY(2px);
+        }
+
+        .premium-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .premium-btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 4rem;
+        }
+
+        .page-link {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--white);
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            font-weight: 500;
+        }
+
+        .page-link:hover, 
+        .page-link.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .page-link i {
+            font-size: 1rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo i {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-right: 0.75rem;
+        }
+
+        .footer-logo span {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-col p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.85rem;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-links a i {
+            width: 20px;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            background: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .newsletter {
+            margin-top: 1.5rem;
+        }
+
+        .newsletter p {
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 0.5rem 0 0 0.5rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .resources-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .resources-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1.5rem;
+                box-shadow: var(--shadow-md);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-cta {
+                display: none;
+                position: absolute;
+                top: calc(100% + 80px);
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 1.5rem;
+                flex-direction: column;
+                box-shadow: var(--shadow-md);
+                z-index: 1000;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .resources-hero {
+                padding: 8rem 0 4rem;
+            }
+            
+            .resources-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .search-bar {
+                padding-right: 120px;
+            }
+            
+            .filter-tabs {
+                justify-content: flex-start;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .resources-hero {
+                padding: 7rem 0 3rem;
+            }
+            
+            .resources-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-btn {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Starford Tech</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="resources.html" class="active">Resources</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="nav-cta">
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="signup.html" class="btn btn-primary">Register</a>
+                </div>
+
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="resources-hero">
+        <div class="container">
+            <div class="resources-hero-content">
+                <h1>Design Resources Hub</h1>
+                <p>Access our complete collection of professional design assets for your projects and coursework</p>
+                
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="Search for templates, PSDs, icons...">
+                    <button class="search-btn"><i class="fas fa-search"></i> Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Design Resources</h2>
+                <p>Filter and download high-quality design assets for your projects. All resources are carefully curated for Starford Tech students.</p>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="filter-tabs">
+                    <div class="filter-tab active" data-filter="all">All Resources</div>
+                    <div class="filter-tab" data-filter="psd">PSD Files</div>
+                    <div class="filter-tab" data-filter="flyer">Flyers</div>
+                    <div class="filter-tab" data-filter="business-card">Business Cards</div>
+                    <div class="filter-tab" data-filter="calendar">Calendars</div>
+                    <div class="filter-tab" data-filter="ticket">Tickets</div>
+                    <div class="filter-tab" data-filter="poster">Posters</div>
+                    <div class="filter-tab" data-filter="sticker">Stickers</div>
+                    <div class="filter-tab" data-filter="ui-kit">UI Kits</div>
+                    <div class="filter-tab" data-filter="icon">Icons</div>
+                </div>
+            </div>
+
+            <!-- Resources Grid -->
+            <div class="resources-grid">
+                <!-- Resource Card 1 -->
+                <div class="resource-card" data-category="psd">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Real Estate PSD">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Real Estate Website PSD</h3>
+                        <p class="resource-description">Complete property listing template with search filters, gallery and contact forms.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-file-image"></i> PSD, 380MB</span>
+                            <a href="#" class="premium-btn"><i class="fas fa-shopping-cart"></i> Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 2 -->
+                <div class="resource-card" data-category="flyer">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Food Festival Flyer">
+                        <div class="resource-badge free">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Food Festival Flyer Template</h3>
+                        <p class="resource-description">Colorful flyer design for culinary events with vendor booth layout.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-file-image"></i> PSD, 65MB</span>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 3 -->
+                <div class="resource-card" data-category="business-card">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Photographer Business Card">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Photographer Business Cards</h3>
+                        <p class="resource-description">5 elegant designs for professional photographers with image placeholder.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-address-card"></i> AI, PDF, 150MB</span>
+                            <a href="#" class="premium-btn"><i class="fas fa-shopping-cart"></i> Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 4 -->
+                <div class="resource-card" data-category="calendar">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1518633629420-9f9f9ee03c1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Photo Calendar">
+                        <div class="resource-badge free">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Photo Calendar Template</h3>
+                        <p class="resource-description">12-month calendar with large image area for personal photos.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-calendar-alt"></i> PSD, 85MB</span>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 5 -->
+                <div class="resource-card" data-category="ticket">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sports Ticket">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Sports Event Ticket Pack</h3>
+                        <p class="resource-description">8 ticket designs for various sports events with seating charts.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="fas fa-ticket-alt"></i> AI, PSD, 160MB</span>
+                            <a href="#" class="premium-btn"><i class="fas fa-shopping-cart"></i> Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 6 -->
+                <div class="resource-card" data-category="poster">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1541140134513-85a161dc4a00?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Music Festival Poster">
+                        <div class="resource-badge free">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Music Festival Poster</h3>
+                        <p class="resource-description">Large format poster template for outdoor music events.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-images"></i> PSD, 120MB</span>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 7 -->
+                <div class="resource-card" data-category="sticker">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Brand Stickers">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Brand Identity Stickers</h3>
+                        <p class="resource-description">50+ sticker designs for brand promotion and packaging.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="fas fa-sticky-note"></i> AI, EPS, 220MB</span>
+                            <a href="#" class="premium-btn"><i class="fas fa-shopping-cart"></i> Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 8 -->
+                <div class="resource-card" data-category="ui-kit">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="E-commerce UI">
+                        <div class="resource-badge free">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">E-commerce UI Kit</h3>
+                        <p class="resource-description">Complete online shopping interface with product pages and cart.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="fab fa-figma"></i> Figma, 75MB</span>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 9 -->
+                <div class="resource-card" data-category="icon">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Education Icons">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Education Icon Set</h3>
+                        <p class="resource-description">300+ vector icons for schools, universities and e-learning platforms.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="fas fa-icons"></i> SVG, PNG, 95MB</span>
+                            <a href="#" class="premium-btn"><i class="fas fa-shopping-cart"></i> Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 10 -->
+                <div class="resource-card" data-category="psd">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-05336a8b7d96?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Magazine PSD">
+                        <div class="resource-badge free">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Lifestyle Magazine PSD</h3>
+                        <p class="resource-description">8-page magazine layout with article templates and ad spaces.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-file-image"></i> PSD, 150MB</span>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 11 -->
+                <div class="resource-card" data-category="flyer">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Yoga Flyer">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Yoga Class Flyer Pack</h3>
+                        <p class="resource-description">6 serene flyer designs for yoga studios and wellness centers.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-file-image"></i> PSD, AI, 180MB</span>
+                            <a href="#" class="premium-btn"><i class="fas fa-shopping-cart"></i> Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 12 -->
+                <div class="resource-card" data-category="business-card">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Architect Business Card">
+                        <div class="resource-badge free">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Architect Business Card</h3>
+                        <p class="resource-description">Minimal design with blueprint-inspired elements for architects.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-address-card"></i> AI, 60MB</span>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 13 -->
+                <div class="resource-card" data-category="calendar">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Marketing Calendar">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Marketing Content Calendar</h3>
+                        <p class="resource-description">Complete editorial calendar for social media and content planning.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-calendar-alt"></i> PDF, XLSX, 45MB</span>
+                            <a href="#" class="premium-btn"><i class="fas fa-shopping-cart"></i> Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 14 -->
+                <div class="resource-card" data-category="ticket">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Theater Ticket">
+                        <div class="resource-badge free">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Theater Ticket Template</h3>
+                        <p class="resource-description">Classic play ticket with ornate border and seating details.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="fas fa-ticket-alt"></i> PSD, 40MB</span>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 15 -->
+                <div class="resource-card" data-category="poster">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Art Exhibition Poster">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Art Exhibition Poster Set</h3>
+                        <p class="resource-description">5 gallery poster designs with space for artwork images.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-images"></i> PSD, 320MB</span>
+                            <a href="#" class="premium-btn"><i class="fas fa-shopping-cart"></i> Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 16 -->
+                <div class="resource-card" data-category="sticker">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1579273166152-d725a4e2b755?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Holiday Stickers">
+                        <div class="resource-badge free">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Holiday Sticker Collection</h3>
+                        <p class="resource-description">Festive stickers for Christmas, New Year and winter holidays.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="fas fa-sticky-note"></i> PNG, 30MB</span>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 17 -->
+                <div class="resource-card" data-category="ui-kit">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mobile UI Kit">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Mobile Banking UI Kit</h3>
+                        <p class="resource-description">Complete banking app interface with 80+ screens and components.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="fab fa-sketch"></i> Sketch, 150MB</span>
+                            <a href="#" class="premium-btn"><i class="fas fa-shopping-cart"></i> Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 18 -->
+                <div class="resource-card" data-category="icon">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Technology Icons">
+                        <div class="resource-badge free">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Technology Line Icons</h3>
+                        <p class="resource-description">200+ tech-related icons for apps, websites and presentations.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="fas fa-icons"></i> SVG, 25MB</span>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 19 -->
+                <div class="resource-card" data-category="psd">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Restaurant PSD">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Restaurant Website PSD</h3>
+                        <p class="resource-description">Complete dining website template with menu and reservation system.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-file-image"></i> PSD, 290MB</span>
+                            <a href="#" class="premium-btn"><i class="fas fa-shopping-cart"></i> Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Card 20 -->
+                <div class="resource-card" data-category="flyer">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="DJ Night Flyer">
+                        <div class="resource-badge free">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">DJ Night Flyer Template</h3>
+                        <p class="resource-description">Vibrant club flyer with neon effects and lineup placeholder.</p>
+                        <div class="resource-meta">
+                            <span class="resource-filetype"><i class="far fa-file-image"></i> PSD, 70MB</span>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="page3.html" class="page-link"><i class="fas fa-chevron-left"></i></a>
+                <a href="index.html" class="page-link">1</a>
+                <a href="page2.html" class="page-link">2</a>
+                <a href="page3.html" class="page-link">3</a>
+                <a href="page4.html" class="page-link active">4</a>
+                <a href="page5.html" class="page-link">5</a>
+                <a href="page5.html" class="page-link"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Starford Tech</span>
+                    </div>
+                    <p>Uganda's premier technical training institute specializing in IT and Apple/Macford certifications since 2015.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Design Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> PSD Templates</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Flyer Designs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Business Cards</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Calendars</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Event Tickets</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Posters</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Courses</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Graphic Design</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Macford Certification</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Adobe Photoshop</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Illustrator CC</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Figma Masterclass</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Tutorials</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> License</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get weekly design resources and course updates</p>
+                    <div class="newsletter">
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                            <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2023 Starford Tech. All rights reserved. 
+                <span style="display: block; margin-top: 0.5rem;">Apple and Macford are registered trademarks of Apple Inc.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const navCta = document.querySelector('.nav-cta');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            navCta.classList.toggle('active');
+        });
+
+        // Resource Filtering
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const resourceCards = document.querySelectorAll('.resource-card');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                filterTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Get filter value
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Filter resources
+                resourceCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchBar = document.querySelector('.search-bar');
+        const searchBtn = document.querySelector('.search-btn');
+
+        searchBtn.addEventListener('click', function() {
+            const searchTerm = searchBar.value.toLowerCase();
+            
+            resourceCards.forEach(card => {
+                const title = card.querySelector('.resource-title').textContent.toLowerCase();
+                const description = card.querySelector('.resource-description').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Allow Enter key to trigger search
+        searchBar.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

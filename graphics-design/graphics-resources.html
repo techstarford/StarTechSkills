@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics Resources | Learnoford - Design Assets for Students</title>
+    <meta name="description" content="Free and premium graphics resources for Ugandan students - icons, templates, illustrations, UI kits and design tools to enhance your projects">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Graphics Resources | Learnoford">
+    <meta property="og:description" content="Curated collection of design assets for Ugandan students and creatives">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://learnoford.ug/resources/graphics">
+    <meta property="og:image" content="https://learnoford.ug/images/graphics-resources-preview.jpg">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #6366f1;
+            --primary-dark: #4338ca;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --gray: #6b7280;
+            --light: #f3f4f6;
+            --gradient: linear-gradient(135deg, #8b5cf6, #6366f1);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: #f9fafb;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow-md);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light);
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .btn-lg {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .resource-hero {
+            background: var(--gradient);
+            color: white;
+            padding: 8rem 0 4rem;
+            margin-top: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .resource-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .resource-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .resource-hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 4rem 0;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            gap: 1.5rem;
+        }
+
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .category-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .category-description {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .subcategory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .subcategory-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+        }
+
+        .subcategory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .subcategory-image {
+            height: 180px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subcategory-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .subcategory-card:hover .subcategory-image img {
+            transform: scale(1.05);
+        }
+
+        .subcategory-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .subcategory-content {
+            padding: 1.5rem;
+        }
+
+        .subcategory-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .subcategory-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .resource-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .popular-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .tag:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .featured-resources {
+            margin: 6rem 0;
+        }
+
+        .featured-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .featured-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .featured-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .resource-image {
+            height: 180px;
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .resource-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .resource-content {
+            padding: 1.5rem;
+        }
+
+        .resource-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .resource-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--gray);
+        }
+
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .resource-type {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--gray);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            color: var(--primary-light);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-col p {
+            color: #d1d5db;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.25rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        .newsletter {
+            margin-top: 1rem;
+        }
+
+        .newsletter-input {
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        .newsletter-input input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem 0 0 0.375rem;
+            font-family: inherit;
+        }
+
+        .newsletter-input button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 1rem;
+            border-radius: 0 0.375rem 0.375rem 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-input button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .nav-links, .nav-cta {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .nav-cta {
+                flex-direction: column;
+                padding-top: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .resource-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .category-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .category-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+            
+            .category-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .resource-hero {
+                padding: 7rem 0 3rem;
+            }
+            
+            .resource-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .subcategory-grid, .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Learnoford</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="resources.html" class="active">Resources</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="earn.html">Earn</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="nav-cta">
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                </div>
+
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Graphics Resources Hero Section -->
+    <section class="resource-hero">
+        <div class="container">
+            <div class="resource-hero-content">
+                <h1>Graphics Resources</h1>
+                <p>Elevate your designs with our curated collection of free and premium graphic assets - carefully selected for Ugandan students and creatives</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#subcategories" class="btn btn-accent btn-lg">
+                        <i class="fas fa-layer-group"></i> Browse Categories
+                    </a>
+                    <a href="#featured" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-star"></i> Featured Resources
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Graphics Category Header -->
+        <div class="category-header" id="subcategories">
+            <div class="category-icon">
+                <i class="fas fa-palette"></i>
+            </div>
+            <div>
+                <h2 class="category-title">Graphics & Design Assets</h2>
+                <p class="category-description">High-quality visual resources to enhance your projects, presentations, and creative work</p>
+            </div>
+        </div>
+
+        <!-- Subcategories Grid -->
+        <div class="subcategory-grid">
+            <!-- Icons Subcategory -->
+            <div class="subcategory-card">
+                <div class="subcategory-image">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Icons collection">
+                    <div class="subcategory-badge">Free & Premium</div>
+                </div>
+                <div class="subcategory-content">
+                    <h3 class="subcategory-title">Icons</h3>
+                    <p class="subcategory-description">Vector icons for web, mobile, and print projects in various styles and formats</p>
+                    <div class="resource-count">
+                        <i class="fas fa-database"></i> 1,200+ Resources
+                    </div>
+                    <div class="popular-tags">
+                        <a href="#" class="tag">SVG</a>
+                        <a href="#" class="tag">PNG</a>
+                        <a href="#" class="tag">Font Awesome</a>
+                        <a href="#" class="tag">Material Icons</a>
+                    </div>
+                    <a href="resources/icons.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-arrow-right"></i> Explore Icons
+                    </a>
+                </div>
+            </div>
+
+            <!-- Templates Subcategory -->
+            <div class="subcategory-card">
+                <div class="subcategory-image">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Design templates">
+                    <div class="subcategory-badge">Premium</div>
+                </div>
+                <div class="subcategory-content">
+                    <h3 class="subcategory-title">Templates</h3>
+                    <p class="subcategory-description">Ready-to-use templates for presentations, social media, and print materials</p>
+                    <div class="resource-count">
+                        <i class="fas fa-database"></i> 850+ Resources
+                    </div>
+                    <div class="popular-tags">
+                        <a href="#" class="tag">PowerPoint</a>
+                        <a href="#" class="tag">Canva</a>
+                        <a href="#" class="tag">Resume</a>
+                        <a href="#" class="tag">Business Card</a>
+                    </div>
+                    <a href="resources/templates.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-arrow-right"></i> Explore Templates
+                    </a>
+                </div>
+            </div>
+
+            <!-- Illustrations Subcategory -->
+            <div class="subcategory-card">
+                <div class="subcategory-image">
+                    <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Illustrations collection">
+                    <div class="subcategory-badge">Free</div>
+                </div>
+                <div class="subcategory-content">
+                    <h3 class="subcategory-title">Illustrations</h3>
+                    <p class="subcategory-description">Beautiful vector illustrations and art for your digital projects</p>
+                    <div class="resource-count">
+                        <i class="fas fa-database"></i> 2,300+ Resources
+                    </div>
+                    <div class="popular-tags">
+                        <a href="#" class="tag">SVG</a>
+                        <a href="#" class="tag">African Themes</a>
+                        <a href="#" class="tag">Characters</a>
+                        <a href="#" class="tag">Scenes</a>
+                    </div>
+                    <a href="resources/illustrations.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-arrow-right"></i> Explore Illustrations
+                    </a>
+                </div>
+            </div>
+
+            <!-- UI Kits Subcategory -->
+            <div class="subcategory-card">
+                <div class="subcategory-image">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="UI kits collection">
+                    <div class="subcategory-badge">Premium</div>
+                </div>
+                <div class="subcategory-content">
+                    <h3 class="subcategory-title">UI Kits</h3>
+                    <p class="subcategory-description">Complete design systems for apps and websites with components and styles</p>
+                    <div class="resource-count">
+                        <i class="fas fa-database"></i> 150+ Resources
+                    </div>
+                    <div class="popular-tags">
+                        <a href="#" class="tag">Figma</a>
+                        <a href="#" class="tag">Adobe XD</a>
+                        <a href="#" class="tag">Sketch</a>
+                        <a href="#" class="tag">Mobile UI</a>
+                    </div>
+                    <a href="resources/ui-kits.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-arrow-right"></i> Explore UI Kits
+                    </a>
+                </div>
+            </div>
+
+            <!-- Textures & Patterns Subcategory -->
+            <div class="subcategory-card">
+                <div class="subcategory-image">
+                    <img src="https://images.unsplash.com/photo-1491895204226-aa3fcb52e1a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Textures and patterns">
+                    <div class="subcategory-badge">Free</div>
+                </div>
+                <div class="subcategory-content">
+                    <h3 class="subcategory-title">Textures & Patterns</h3>
+                    <p class="subcategory-description">High-resolution textures and seamless patterns for backgrounds and designs</p>
+                    <div class="resource-count">
+                        <i class="fas fa-database"></i> 700+ Resources
+                    </div>
+                    <div class="popular-tags">
+                        <a href="#" class="tag">Seamless</a>
+                        <a href="#" class="tag">African Patterns</a>
+                        <a href="#" class="tag">High-Res</a>
+                        <a href="#" class="tag">PSD</a>
+                    </div>
+                    <a href="resources/textures.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-arrow-right"></i> Explore Textures
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mockups Subcategory -->
+            <div class="subcategory-card">
+                <div class="subcategory-image">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Design mockups">
+                    <div class="subcategory-badge">Premium</div>
+                </div>
+                <div class="subcategory-content">
+                    <h3 class="subcategory-title">Mockups</h3>
+                    <p class="subcategory-description">Professional product mockups to showcase your designs in realistic environments</p>
+                    <div class="resource-count">
+                        <i class="fas fa-database"></i> 400+ Resources
+                    </div>
+                    <div class="popular-tags">
+                        <a href="#" class="tag">PSD</a>
+                        <a href="#" class="tag">Smart Objects</a>
+                        <a href="#" class="tag">Devices</a>
+                        <a href="#" class="tag">Packaging</a>
+                    </div>
+                    <a href="resources/mockups.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-arrow-right"></i> Explore Mockups
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Resources Section -->
+        <section class="featured-resources" id="featured">
+            <div class="featured-header">
+                <h2>Featured Graphics Resources</h2>
+                <p>Hand-picked design assets our team recommends for Ugandan students</p>
+            </div>
+
+            <div class="resource-grid">
+                <!-- Resource 1 -->
+                <div class="resource-card">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="African icons set">
+                        <div class="resource-badge">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Afro Icons Set</h3>
+                        <div class="resource-author">
+                            <div class="author-avatar"></div>
+                            <span>By Learnoford Team</span>
+                        </div>
+                        <p>200+ vector icons with African cultural elements in SVG and PNG formats</p>
+                        <div class="resource-meta">
+                            <span class="resource-type">
+                                <i class="fas fa-file-archive"></i> SVG, PNG
+                            </span>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource 2 -->
+                <div class="resource-card">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Academic presentation template">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Academic PPT Template</h3>
+                        <div class="resource-author">
+                            <div class="author-avatar"></div>
+                            <span>By Makerere Design Lab</span>
+                        </div>
+                        <p>Professional PowerPoint template designed for university presentations</p>
+                        <div class="resource-meta">
+                            <span class="resource-type">
+                                <i class="fas fa-file-powerpoint"></i> PPTX
+                            </span>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-shopping-cart"></i> Get Premium
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource 3 -->
+                <div class="resource-card">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1491895204226-aa3fcb52e1a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Ugandan fabric patterns">
+                        <div class="resource-badge">Free</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Ugandan Fabric Patterns</h3>
+                        <div class="resource-author">
+                            <div class="author-avatar"></div>
+                            <span>By Kampala Design Collective</span>
+                        </div>
+                        <p>Traditional Ugandan fabric patterns in vector format for design projects</p>
+                        <div class="resource-meta">
+                            <span class="resource-type">
+                                <i class="fas fa-file-image"></i> AI, EPS
+                            </span>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource 4 -->
+                <div class="resource-card">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Student UI kit">
+                        <div class="resource-badge">Premium</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Student App UI Kit</h3>
+                        <div class="resource-author">
+                            <div class="author-avatar"></div>
+                            <span>By Kyambogo Dev Team</span>
+                        </div>
+                        <p>Complete Figma UI kit for educational apps with 50+ screens</p>
+                        <div class="resource-meta">
+                            <span class="resource-type">
+                                <i class="fab fa-figma"></i> Figma
+                            </span>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-shopping-cart"></i> Get Premium
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="graphics pagination/page1.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-th-large"></i> View All Graphics Resources
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Learnoford</h3>
+                    <p>Empowering Ugandan students through education, skills, and income opportunities.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="resources/graphics.html">Graphics</a></li>
+                        <li><a href="resources/templates.html">Templates</a></li>
+                        <li><a href="resources/code.html">Code Snippets</a></li>
+                        <li><a href="resources/study-guides.html">Study Guides</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Earn</h3>
+                    <ul class="footer-links">
+                        <li><a href="earn/freelance.html">Freelance Hub</a></li>
+                        <li><a href="earn/sell-notes.html">Sell Your Notes</a></li>
+                        <li><a href="earn/tutoring.html">Tutoring</a></li>
+                        <li><a href="earn/affiliate.html">Affiliate Program</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Get weekly design resources and opportunities</p>
+                    <div class="newsletter">
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2023 Learnoford. All rights reserved. Made with <i class="fas fa-heart" style="color: #ef4444;"></i> for Ugandan students.
+            </div>
+        </div>
+    </footer

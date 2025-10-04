@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics Design Mastery | StarfordSkills</title>
+    <meta name="description" content="Master graphics design with our comprehensive tutorials, resources, and projects. Learn Photoshop, Illustrator, Canva, Figma and more.">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ===== Global Variables & Reset ===== */
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --primary-light: #4895ef;
+            --secondary: #f72585;
+            --accent: #4cc9f0;
+            --dark: #1a1a2e;
+            --dark-gray: #333;
+            --medium-gray: #666;
+            --light-gray: #e0e0e0;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --success: #38b000;
+            --warning: #ff9e00;
+            --danger: #ef233c;
+            
+            --header-height: 80px;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* ===== Utility Classes ===== */
+        .container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #d91a6a;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        /* ===== Header & Navigation ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--dark);
+        }
+        
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            margin-right: 30px;
+        }
+        
+        .nav-links li {
+            position: relative;
+            margin-left: 25px;
+        }
+        
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links li a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links li a i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        
+        /* Enhanced Dropdown Menu - SkillsHub Style */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 220px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .dropdown-side {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background: var(--white);
+            width: 220px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        /* Desktop Hover Effects */
+        @media (min-width: 993px) {
+            .nav-links li:hover > .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            .dropdown-menu li:hover > .dropdown-side {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+            }
+            
+            .nav-links li:hover > a i.fa-chevron-down {
+                transform: rotate(180deg);
+            }
+            
+            .dropdown-menu li:hover > a i.fa-chevron-right {
+                transform: rotate(90deg);
+            }
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        
+        .dropdown-menu li a {
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .dropdown-menu li a:hover {
+            color: var(--primary);
+            background: rgba(67, 97, 238, 0.05);
+        }
+        
+        /* Mobile Navigation Toggle */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Search & Auth */
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-right: 20px;
+        }
+        
+        .search-box input {
+            padding: 10px 15px 10px 40px;
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            outline: none;
+            width: 200px;
+            transition: var(--transition);
+        }
+        
+        .search-box input:focus {
+            border-color: var(--primary);
+            width: 250px;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--medium-gray);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 320px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+            overflow-y: auto;
+            padding: 30px;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .mobile-nav-links li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-nav-links li a {
+            display: block;
+            padding: 12px 0;
+            font-weight: 600;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .mobile-dropdown {
+            padding-left: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+        
+        .mobile-dropdown li a {
+            padding: 8px 0;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .mobile-dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* ===== Graphics Design Hero ===== */
+        .graphics-hero {
+            background: linear-gradient(135deg, #8A2BE2, #4361ee);
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .graphics-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+        
+        .graphics-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .graphics-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .graphics-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .graphics-hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .graphics-hero-btns .btn {
+            background: var(--white);
+            color: #8A2BE2;
+            min-width: 180px;
+        }
+        
+        .graphics-hero-btns .btn-outline {
+            background: transparent;
+            border-color: var(--white);
+            color: var(--white);
+        }
+        
+        .graphics-hero-btns .btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .graphics-hero-btns .btn-outline:hover {
+            background: var(--white);
+            color: #8A2BE2;
+        }
+        
+        /* ===== Main Content Layout ===== */
+        .main-content {
+            display: flex;
+            gap: 40px;
+            padding: 100px 0;
+        }
+        
+        .content-area {
+            flex: 1;
+        }
+        
+        .sidebar {
+            width: 320px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            align-self: flex-start;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--dark);
+        }
+        
+        .sidebar-menu {
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-menu h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .sidebar-menu h3 i {
+            margin-right: 10px;
+        }
+        
+        .sidebar-menu ul li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .sidebar-menu ul li a {
+            color: var(--dark-gray);
+            transition: var(--transition);
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .sidebar-menu ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .sidebar-menu ul li a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--primary-light);
+            border-radius: 50%;
+        }
+        
+        .sidebar-menu ul li.active a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .sidebar-menu ul li.active a::before {
+            background: var(--primary);
+            width: 8px;
+            height: 8px;
+        }
+        
+        .sidebar-resources {
+            background: rgba(67, 97, 238, 0.05);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 30px;
+        }
+        
+        .sidebar-resources h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .sidebar-resources ul li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar-resources ul li a {
+            color: var(--dark-gray);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .sidebar-resources ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .sidebar-resources ul li a i {
+            margin-right: 10px;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== Learning Path ===== */
+        .learning-path {
+            margin-bottom: 60px;
+        }
+        
+        .path-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .path-step {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 50%;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-title {
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .step-content {
+            margin-bottom: 25px;
+        }
+        
+        .step-content p {
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+        }
+        
+        .step-resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .resource-item {
+            background: rgba(67, 97, 238, 0.05);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: var(--transition);
+        }
+        
+        .resource-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resource-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .resource-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .resource-item p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+        }
+        
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--medium-gray);
+            font-size: 0.85rem;
+        }
+        
+        .resource-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-meta i {
+            margin-right: 5px;
+        }
+        
+        /* ===== Tools Section ===== */
+        .tools-section {
+            margin-bottom: 60px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .tool-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tool-header {
+            padding: 30px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+        }
+        
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .tool-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tool-card .tool-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .tool-content {
+            padding: 25px;
+        }
+        
+        .tool-content p {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+        
+        .tool-features {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        
+        .tool-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: var(--dark-gray);
+        }
+        
+        .tool-features li i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        /* ===== Project Showcase ===== */
+        .projects-section {
+            margin-bottom: 60px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .project-img {
+            height: 200px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .project-content p {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== FAQ Section ===== */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+        
+        .faq-list {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: rgba(67, 97, 238, 0.05);
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 0 25px 20px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* ===== Footer ===== */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%231a1a2e" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%231a1a2e" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a1a2e"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom a {
+            color: var(--accent);
+        }
+        
+        /* ===== Back to Top Button ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 1200px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: static;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .search-box {
+                display: none;
+            }
+            
+            .graphics-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .graphics-hero {
+                padding: 150px 0 80px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .graphics-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .graphics-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .graphics-hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .graphics-hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .step-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .step-number {
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .graphics-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .tools-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .step-resources {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="/index.html" class="logo">
+                <img src="/ASSETS/IMAGES/icons/starford.png" alt="Macford Skills Logo">
+                <span>StarfordSkills</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Skills Hubs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="graphicsdesignhub.html"><i class="fas fa-paint-brush"></i> Graphics Design</a></li>
+                            <li><a href="it.html"><i class="fas fa-laptop"></i> IT Literacy</a></li>
+                            <li><a href="programming.html"><i class="fas fa-code"></i> Programming</a></li>
+                            <li><a href="video.html"><i class="fas fa-video"></i> Videography</a></li>
+                            <li><a href="photo.html"><i class="fas fa-camera"></i> Photography</a></li>
+                            <li><a href="repair.html"><i class="fas fa-tools"></i> Tech Repair</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="resources.html">Resources <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="graphicsresources.html">Graphics Design <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="photoshop.html"><i class="fas fa-image"></i> Adobe Photoshop</a></li>
+                                    <li><a href="illustrator.html"><i class="fas fa-pen-fancy"></i> Illustrator</a></li>
+                                    <li><a href="figma.html"><i class="fas fa-pencil-ruler"></i> Figma</a></li>
+                                    <li><a href="canva.html"><i class="fas fa-palette"></i> Canva</a></li>
+                                    <li><a href="uiux.html"><i class="fas fa-mobile-alt"></i> UI/UX Design</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">IT Literacy <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="basic-computing.html"><i class="fas fa-desktop"></i> Basic Computing</a></li>
+                                    <li><a href="office.html"><i class="fas fa-file-word"></i> Microsoft Office</a></li>
+                                    <li><a href="internet.html"><i class="fas fa-globe"></i> Internet Skills</a></li>
+                                    <li><a href="cybersecurity.html"><i class="fas fa-shield-alt"></i> Cybersecurity</a></li>
+                                    <li><a href="cloud.html"><i class="fas fa-cloud"></i> Cloud Computing</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Programming <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="web-development.html"><i class="fas fa-code"></i> Web Development</a></li>
+                                    <li><a href="python.html"><i class="fab fa-python"></i> Python</a></li>
+                                    <li><a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a></li>
+                                    <li><a href="mobile-apps.html"><i class="fas fa-mobile"></i> Mobile Apps</a></li>
+                                    <li><a href="data-science.html"><i class="fas fa-database"></i> Data Science</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="all-resources.html">All Resources</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="showcase.html">Showcase</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog-page1.html">Blog</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search tutorials...">
+                    </div>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                </div>
+            </nav>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">MacfordSkills</a>
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="#">Skills Hubs</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="graphics.html">Graphics Design</a></li>
+                    <li><a href="it.html">IT Literacy</a></li>
+                    <li><a href="programming.html">Programming</a></li>
+                    <li><a href="video.html">Videography</a></li>
+                    <li><a href="photo.html">Photography</a></li>
+                    <li><a href="repair.html">Tech Repair</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="resources.html">Resources</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="graphicsresources.html">Graphics Design</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="photoshop.html">Adobe Photoshop</a></li>
+                            <li><a href="illustrator.html">Illustrator</a></li>
+                            <li><a href="figma.html">Figma</a></li>
+                            <li><a href="canva.html">Canva</a></li>
+                            <li><a href="uiux.html">UI/UX Design</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="#">IT Literacy</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="basic-computing.html">Basic Computing</a></li>
+                            <li><a href="office.html">Microsoft Office</a></li>
+                            <li><a href="internet.html">Internet Skills</a></li>
+                            <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                            <li><a href="cloud.html">Cloud Computing</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="#">Programming</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="python.html">Python</a></li>
+                            <li><a href="javascript.html">JavaScript</a></li>
+                            <li><a href="mobile-apps.html">Mobile Apps</a></li>
+                            <li><a href="data-science.html">Data Science</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="all-resources.html">All Resources</a></li>
+                </ul>
+            </li>
+            <li><a href="showcase.html">Showcase</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Graphics Design Hero -->
+    <section class="graphics-hero">
+        <div class="container graphics-hero-content" data-aos="fade-up">
+            <h1>Master Graphics Design</h1>
+            <p>Learn professional design skills from scratch. Create stunning visuals, build your portfolio, and start your design career with our comprehensive learning path.</p>
+            <div class="graphics-hero-btns">
+                <a href="#learning-path" class="btn">Start Learning Now</a>
+                <a href="#projects" class="btn btn-outline">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Graphics Design Hub</h2>
+            
+            <div class="sidebar-menu">
+                <h3><i class="fas fa-road"></i> Learning Path</h3>
+                <ul>
+                    <li class="active"><a href="#learning-path">Complete Learning Path</a></li>
+                    <li><a href="#fundamentals">Design Fundamentals</a></li>
+                    <li><a href="#software">Design Software</a></li>
+                    <li><a href="#specializations">Specializations</a></li>
+                    <li><a href="#projects">Practice Projects</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-menu">
+                <h3><i class="fas fa-tools"></i> Design Tools</h3>
+                <ul>
+                    <li><a href="#photoshop">Adobe Photoshop</a></li>
+                    <li><a href="#illustrator">Adobe Illustrator</a></li>
+                    <li><a href="#figma">Figma</a></li>
+                    <li><a href="#canva">Canva</a></li>
+                    <li><a href="#xd">Adobe XD</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-resources">
+                <h3>Free Resources</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-download"></i> Design Templates Pack</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Color Theory Guide</a></li>
+                    <li><a href="#"><i class="fas fa-palette"></i> Free Icon Set</a></li>
+                    <li><a href="#"><i class="fas fa-font"></i> Font Bundle</a></li>
+                    <li><a href="#"><i class="fas fa-images"></i> Stock Photos</a></li>
+                </ul>
+            </div>
+        </aside>
+        
+        <!-- Content Area -->
+        <main class="content-area">
+            <!-- Learning Path Section -->
+            <section id="learning-path" class="learning-path">
+                <div class="section-title">
+                    <h2>Graphics Design Learning Path</h2>
+                    <p>Follow this structured path to go from beginner to professional designer</p>
+                </div>
+                
+                <div class="path-steps">
+                    <div class="path-step" data-aos="fade-up">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <h3 class="step-title">Design Fundamentals</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Start with the core principles that form the foundation of all great design work.</p>
+                            <p>Learn about color theory, typography, composition, and visual hierarchy to create balanced and effective designs.</p>
+                        </div>
+                        <div class="step-resources">
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-palette"></i></div>
+                                <h4>Color Theory Basics</h4>
+                                <p>Understand how colors work together and evoke emotions</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 45 min</span>
+                                    <span><i class="far fa-file"></i> PDF</span>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-font"></i></div>
+                                <h4>Typography Guide</h4>
+                                <p>Learn to choose and pair fonts effectively</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 1h 10m</span>
+                                    <span><i class="fas fa-video"></i> Video</span>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-th"></i></div>
+                                <h4>Layout Principles</h4>
+                                <p>Master composition and visual hierarchy</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 55 min</span>
+                                    <span><i class="fas fa-video"></i> Video</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="path-step" data-aos="fade-up">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <h3 class="step-title">Essential Design Software</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Master the tools that professional designers use every day.</p>
+                            <p>Learn Photoshop for image editing, Illustrator for vector graphics, and modern tools like Figma for UI/UX design.</p>
+                        </div>
+                        <div class="step-resources">
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-image"></i></div>
+                                <h4>Photoshop Basics</h4>
+                                <p>Get started with layers, masks, and essential tools</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 2h 15m</span>
+                                    <span><i class="fas fa-video"></i> Course</span>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-pen-fancy"></i></div>
+                                <h4>Illustrator Fundamentals</h4>
+                                <p>Create vector graphics and illustrations</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 2h 30m</span>
+                                    <span><i class="fas fa-video"></i> Course</span>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-pencil-ruler"></i></div>
+                                <h4>Figma for Beginners</h4>
+                                <p>Design interfaces and collaborate with teams</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 1h 45m</span>
+                                    <span><i class="fas fa-video"></i> Course</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="path-step" data-aos="fade-up">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <h3 class="step-title">Design Specializations</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Choose your design focus area and develop specialized skills.</p>
+                            <p>Whether you're interested in branding, UI/UX, social media graphics, or print design, we have dedicated learning paths.</p>
+                        </div>
+                        <div class="step-resources">
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-mobile-alt"></i></div>
+                                <h4>UI/UX Design</h4>
+                                <p>Create user-friendly interfaces and experiences</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 5h 20m</span>
+                                    <span><i class="fas fa-video"></i> Course</span>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-certificate"></i></div>
+                                <h4>Brand Identity</h4>
+                                <p>Develop logos and complete brand systems</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 4h 45m</span>
+                                    <span><i class="fas fa-video"></i> Course</span>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-share-alt"></i></div>
+                                <h4>Social Media Graphics</h4>
+                                <p>Create engaging content for social platforms</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 3h 10m</span>
+                                    <span><i class="fas fa-video"></i> Course</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="path-step" data-aos="fade-up">
+                        <div class="step-header">
+                            <div class="step-number">4</div>
+                            <h3 class="step-title">Portfolio Development</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Build a professional portfolio that showcases your skills and gets you hired.</p>
+                            <p>Learn how to present your work effectively, write case studies, and create a personal brand as a designer.</p>
+                        </div>
+                        <div class="step-resources">
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-briefcase"></i></div>
+                                <h4>Portfolio Guide</h4>
+                                <p>How to create a standout design portfolio</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 1h 30m</span>
+                                    <span><i class="far fa-file"></i> Guide</span>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-user-tie"></i></div>
+                                <h4>Freelancing Basics</h4>
+                                <p>Start your freelance design business</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 2h 15m</span>
+                                    <span><i class="fas fa-video"></i> Course</span>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-handshake"></i></div>
+                                <h4>Client Management</h4>
+                                <p>Work with clients and manage projects</p>
+                                <div class="resource-meta">
+                                    <span><i class="far fa-clock"></i> 1h 45m</span>
+                                    <span><i class="fas fa-video"></i> Course</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Tools Section -->
+            <section id="tools" class="tools-section">
+                <div class="section-title">
+                    <h2>Essential Design Tools</h2>
+                    <p>Master the software that professional designers use</p>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-card" data-aos="fade-up">
+                        <div class="tool-header">
+                            <div class="tool-icon"><i class="fas fa-image"></i></div>
+                            <h3>Adobe Photoshop</h3>
+                            <p class="tool-desc">Industry-standard image editing</p>
+                        </div>
+                        <div class="tool-content">
+                            <p>The powerhouse for photo manipulation, digital painting, and complex compositing.</p>
+                            <ul class="tool-features">
+                                <li><i class="fas fa-check"></i> Photo editing and retouching</li>
+                                <li><i class="fas fa-check"></i> Digital painting and drawing</li>
+                                <li><i class="fas fa-check"></i> Advanced compositing</li>
+                                <li><i class="fas fa-check"></i> Web and app design mockups</li>
+                            </ul>
+                            <a href="photoshop.html" class="btn">Learn Photoshop</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tool-header">
+                            <div class="tool-icon"><i class="fas fa-pen-fancy"></i></div>
+                            <h3>Adobe Illustrator</h3>
+                            <p class="tool-desc">Vector graphics and illustration</p>
+                        </div>
+                        <div class="tool-content">
+                            <p>Create logos, icons, illustrations, and typography that scale perfectly to any size.</p>
+                            <ul class="tool-features">
+                                <li><i class="fas fa-check"></i> Logo and icon design</li>
+                                <li><i class="fas fa-check"></i> Vector illustrations</li>
+                                <li><i class="fas fa-check"></i> Typography and lettering</li>
+                                <li><i class="fas fa-check"></i> Print design and layouts</li>
+                            </ul>
+                            <a href="illustrator.html" class="btn">Learn Illustrator</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tool-header">
+                            <div class="tool-icon"><i class="fas fa-pencil-ruler"></i></div>
+                            <h3>Figma</h3>
+                            <p class="tool-desc">Modern UI/UX design tool</p>
+                        </div>
+                        <div class="tool-content">
+                            <p>Collaborative interface design tool for creating websites, apps, and digital products.</p>
+                            <ul class="tool-features">
+                                <li><i class="fas fa-check"></i> Interface and app design</li>
+                                <li><i class="fas fa-check"></i> Real-time collaboration</li>
+                                <li><i class="fas fa-check"></i> Prototyping and interactions</li>
+                                <li><i class="fas fa-check"></i> Design systems</li>
+                            </ul>
+                            <a href="figma.html" class="btn">Learn Figma</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Projects Section -->
+            <section id="projects" class="projects-section">
+                <div class="section-title">
+                    <h2>Practice Projects</h2>
+                    <p>Apply your skills with real-world design challenges</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-img">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Mobile App Interface</h3>
+                            <p>Design a clean, user-friendly interface for a fitness tracking app with dark/light mode.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-clock"></i> 4-6 hours</span>
+                                <span><i class="fas fa-signal"></i> Intermediate</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">Start Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-img">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Brand Identity Package</h3>
+                            <p>Create a complete brand identity for a coffee shop including logo, colors, and stationery.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-clock"></i> 6-8 hours</span>
+                                <span><i class="fas fa-signal"></i> Intermediate</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">Start Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-img">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Magazine Layout</h3>
+                            <p>Design a 4-page magazine spread for a travel publication with typography and image treatment.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-clock"></i> 3-5 hours</span>
+                                <span><i class="fas fa-signal"></i> Beginner</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">Start Project</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Common questions about learning graphics design</p>
+                </div>
+                
+                <div class="faq-list">
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            Do I need to be good at drawing to learn graphics design? <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Not necessarily. While drawing skills can be helpful, modern graphic design relies more on software skills, composition, typography, and color theory. Many successful designers don't have traditional drawing skills but excel at creating digital designs using tools like Photoshop, Illustrator, and Figma.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            How long does it take to become proficient in graphics design? <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>With consistent practice, you can learn the basics of graphic design in 3-6 months. Becoming proficient enough to take on professional projects typically takes 6-12 months of dedicated learning and practice. Mastery, like any skill, develops over years of experience and continuous learning.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            Which software should I learn first? <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We recommend starting with Adobe Illustrator for vector graphics or Adobe Photoshop for image editing, depending on your interests. For those interested in UI/UX design, Figma is an excellent starting point. Many designers also begin with Canva to understand basic design principles before moving to professional tools.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            Can I learn graphics design on my own? <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! Many successful designers are self-taught. With the wealth of online resources, tutorials, and communities available today, you can learn graphic design on your own schedule. The key is consistent practice, building a portfolio, and seeking feedback from other designers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            What computer specs do I need for graphic design? <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>For graphic design, we recommend a computer with at least 8GB RAM (16GB preferred), a multi-core processor (Intel i5 or equivalent), and a dedicated graphics card. Storage should include an SSD for faster performance. Display quality is also important - look for good color accuracy and resolution (1920x1080 minimum).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="skills.html">Skills Hubs</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Skill Hubs</h3>
+                    <ul>
+                        <li><a href="graphicsdesignhub.html">Graphics Design</a></li>
+                        <li><a href="itskillshub.html">IT Literacy</a></li>
+                        <li><a href="programming.html">Programming</a></li>
+                        <li><a href="video.html">Videography</a></li>
+                        <li><a href="photo.html">Photography</a></li>
+                        <li><a href="repair.html">Tech Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Skill Street, Digital City</p>
+                        <p><i class="fas fa-envelope"></i> contact@macfordskills.com</p>
+                        <p><i class="fas fa-phone-alt"></i> +1 (234) 567-8910</p>
+                    </div>
+                    
+                    <h3 style="margin-top: 25px;">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Macford Skills. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.querySelectorAll('.mobile-nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('overlay');
+        
+        mobileNavToggle.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+        });
+        
+        // Close mobile menu when clicking on overlay
+        overlay.addEventListener('click', () => {
+            mobileNavToggle.forEach(toggle => {
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        });
+        
+        // Mobile dropdown toggle
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                dropdown.classList.toggle('active');
+                if (dropdown.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // FAQ Toggle
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = question.nextElementSibling;
+                
+                faqItem.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Sticky Header on Scroll
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.height = '70px';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.height = '80px';
+            }
+        });
+    </script>
+</body>
+</html>

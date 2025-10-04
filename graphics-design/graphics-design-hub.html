@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics Design Hub | Macford Skills</title>
+    <meta name="description" content="Master graphic design with our comprehensive tutorials, free resources, and premium courses covering Photoshop, Illustrator, Canva, branding and more">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ===== Global Variables & Reset ===== */
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --primary-light: #4895ef;
+            --secondary: #f72585;
+            --accent: #4cc9f0;
+            --dark: #1a1a2e;
+            --dark-gray: #333;
+            --medium-gray: #666;
+            --light-gray: #e0e0e0;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --success: #38b000;
+            --warning: #ff9e00;
+            --danger: #ef233c;
+            
+            --header-height: 80px;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* ===== Utility Classes ===== */
+        .container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #d91a6a;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        /* ===== Header & Navigation ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--dark);
+        }
+        
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            margin-right: 30px;
+        }
+        
+        .nav-links li {
+            position: relative;
+            margin-left: 25px;
+        }
+        
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links li a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links li a i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+        
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 220px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dropdown-menu li a {
+            padding: 10px 20px;
+            display: block;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .dropdown-menu li a:hover {
+            color: var(--primary);
+            background: rgba(67, 97, 238, 0.05);
+        }
+        
+        /* Mobile Navigation Toggle */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Search & Auth */
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-right: 20px;
+        }
+        
+        .search-box input {
+            padding: 10px 15px 10px 40px;
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            outline: none;
+            width: 200px;
+            transition: var(--transition);
+        }
+        
+        .search-box input:focus {
+            border-color: var(--primary);
+            width: 250px;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--medium-gray);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 320px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+            overflow-y: auto;
+            padding: 30px;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .mobile-nav-links li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-nav-links li a {
+            display: block;
+            padding: 12px 0;
+            font-weight: 600;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .mobile-dropdown {
+            padding-left: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+        
+        .mobile-dropdown li a {
+            padding: 8px 0;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .mobile-dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* ===== Graphics Design Hero ===== */
+        .graphics-hero {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .graphics-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+        
+        .graphics-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .graphics-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .graphics-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-btns .btn {
+            background: var(--white);
+            color: var(--primary-dark);
+            min-width: 180px;
+        }
+        
+        .hero-btns .btn-outline {
+            background: transparent;
+            border-color: var(--white);
+            color: var(--white);
+        }
+        
+        .hero-btns .btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-btns .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+        
+        /* Hero Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            bottom: -50px;
+            width: 500px;
+            animation: float 6s ease-in-out infinite;
+            display: none; /* Hidden on mobile */
+        }
+        
+        /* ===== Subcategories Grid ===== */
+        .subcategories {
+            background-color: #f9f9f9;
+        }
+        
+        .subcategories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .subcategory-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .subcategory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .subcategory-img {
+            height: 200px;
+            background-color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .subcategory-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .subcategory-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .subcategory-content {
+            padding: 25px;
+        }
+        
+        .subcategory-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .subcategory-content p {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .subcategory-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        .subcategory-stats span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .subcategory-stats i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+        
+        /* ===== Popular Resources ===== */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .resource-img {
+            height: 180px;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .resource-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .resource-content {
+            padding: 25px;
+        }
+        
+        .resource-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .resource-content p {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        .resource-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-meta i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+        
+        /* ===== Learning Paths ===== */
+        .learning-paths {
+            background-color: #f9f9f9;
+        }
+        
+        .paths-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .path-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .path-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .path-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .path-title {
+            display: flex;
+            align-items: center;
+        }
+        
+        .path-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            font-weight: 700;
+            margin-right: 15px;
+        }
+        
+        .path-header h3 {
+            font-size: 1.3rem;
+        }
+        
+        .path-toggle {
+            font-size: 1.2rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .path-item.active .path-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .path-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .path-item.active .path-content {
+            max-height: 1000px;
+        }
+        
+        .path-steps {
+            padding-left: 55px;
+        }
+        
+        .path-step {
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-left: 2px solid var(--light-gray);
+            padding-left: 30px;
+        }
+        
+        .path-step:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-left: 2px solid transparent;
+        }
+        
+        .path-step::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid var(--white);
+        }
+        
+        .path-step h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .path-step p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+        }
+        
+        /* ===== Design Tools ===== */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        
+        .tool-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .tool-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .tool-card p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== Testimonials ===== */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--dark-gray);
+            font-size: 1.05rem;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            line-height: 1;
+            font-family: serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: var(--warning);
+            margin-top: 5px;
+        }
+        
+        /* ===== Newsletter ===== */
+        .newsletter {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: var(--white);
+            padding: 70px 40px;
+            border-radius: var(--border-radius);
+            margin: 80px auto;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .newsletter::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            padding: 0 30px;
+            background: var(--dark);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form button:hover {
+            background: #111;
+        }
+        
+        /* ===== Footer ===== */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%231a1a2e" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%231a1a2e" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a1a2e"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom a {
+            color: var(--accent);
+        }
+        
+        /* ===== Back to Top Button ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 1200px) {
+            .graphics-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-image {
+                width: 400px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .search-box {
+                display: none;
+            }
+            
+            .hero-image {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .graphics-hero {
+                padding: 150px 0 80px;
+            }
+            
+            .graphics-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .graphics-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                border-radius: var(--border-radius);
+            }
+            
+            .newsletter-form input {
+                border-radius: var(--border-radius);
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: var(--border-radius);
+                padding: 15px;
+                width: 100%;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .path-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .path-title {
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .graphics-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .subcategories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .mobile-nav {
+                width: 280px;
+            }
+            
+            .path-steps {
+                padding-left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.svg" alt="Macford Skills Logo">
+               <!--  <span>MacfordSkills</span> -->
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Skills Hubs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="graphicsdesignhub.html" class="active"><i class="fas fa-paint-brush"></i> Graphics Design</a></li>
+                            <li><a href="it.html"><i class="fas fa-laptop"></i> IT Literacy</a></li>
+                            <li><a href="programming.html"><i class="fas fa-code"></i> Programming</a></li>
+                            <li><a href="video.html"><i class="fas fa-video"></i> Videography</a></li>
+                            <li><a href="photo.html"><i class="fas fa-camera"></i> Photography</a></li>
+                            <li><a href="repair.html"><i class="fas fa-tools"></i> Tech Repair</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="showcase.html">Showcase</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog-page1.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search tutorials...">
+                    </div>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                </div>
+            </nav>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">MacfordSkills</a>
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="#">Skills Hubs</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="#" class="active">Graphics Design</a></li>
+                    <li><a href="it.html">IT Literacy</a></li>
+                    <li><a href="programming.html">Programming</a></li>
+                    <li><a href="video.html">Videography</a></li>
+                    <li><a href="photo.html">Photography</a></li>
+                    <li><a href="repair.html">Tech Repair</a></li>
+                </ul>
+            </li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="showcase.html">Showcase</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Graphics Design Hero Section -->
+    <section class="graphics-hero">
+        <div class="graphics-hero-content" data-aos="fade-up">
+            <h1>Master the Art of Visual Communication</h1>
+            <p>From Photoshop basics to advanced branding strategies - learn graphic design skills that can transform your career or business.</p>
+            <div class="hero-btns">
+                <a href="#subcategories" class="btn">Explore Design Fields</a>
+                <a href="#resources" class="btn btn-outline">Get Free Resources</a>
+            </div>
+        </div>
+        
+        <img src="graphics-hero-image.png" alt="Graphic design illustration" class="hero-image">
+    </section>
+
+    <!-- Subcategories Section -->
+    <section class="section subcategories" id="subcategories">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Graphic Design Specializations</h2>
+                <p>Explore various fields within graphic design and find your creative niche</p>
+            </div>
+            
+            <div class="subcategories-grid">
+                <div class="subcategory-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="subcategory-img" style="background-color: #ff6b6b;">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <div class="subcategory-content">
+                        <h3>Advertising Design</h3>
+                        <p>Create compelling ads, banners, and marketing materials that convert viewers into customers.</p>
+                        <a href="#" class="btn">Learn Advertising Design</a>
+                        <div class="subcategory-stats">
+                            <span><i class="fas fa-video"></i> 24 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 15 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="subcategory-img" style="background-color: #48dbfb;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="subcategory-content">
+                        <h3>Branding & Identity</h3>
+                        <p>Develop complete brand systems including logos, color palettes, typography and style guides.</p>
+                        <a href="#" class="btn">Master Branding</a>
+                        <div class="subcategory-stats">
+                            <span><i class="fas fa-video"></i> 18 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 22 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="subcategory-img" style="background-color: #1dd1a1;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="subcategory-content">
+                        <h3>UI/UX Design</h3>
+                        <p>Design intuitive user interfaces and engaging user experiences for apps and websites.</p>
+                        <a href="#" class="btn">Explore UI/UX</a>
+                        <div class="subcategory-stats">
+                            <span><i class="fas fa-video"></i> 32 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 8 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="subcategory-img" style="background-color: #f368e0;">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="subcategory-content">
+                        <h3>Apparel Design</h3>
+                        <p>Create stunning t-shirt graphics, patterns, and textile designs for fashion and merchandise.</p>
+                        <a href="#" class="btn">Start Designing Apparel</a>
+                        <div class="subcategory-stats">
+                            <span><i class="fas fa-video"></i> 14 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 12 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="subcategory-img" style="background-color: #ff9f43;">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="subcategory-content">
+                        <h3>Publication Design</h3>
+                        <p>Layout books, magazines, newspapers and other print publications with professional techniques.</p>
+                        <a href="#" class="btn">Learn Publication Design</a>
+                        <div class="subcategory-stats">
+                            <span><i class="fas fa-video"></i> 16 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 5 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subcategory-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="subcategory-img" style="background-color: #5f27cd;">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <div class="subcategory-content">
+                        <h3>Packaging Design</h3>
+                        <p>Create eye-catching product packaging that stands out on shelves and communicates brand values.</p>
+                        <a href="#" class="btn">Master Packaging</a>
+                        <div class="subcategory-stats">
+                            <span><i class="fas fa-video"></i> 10 Tutorials</span>
+                            <span><i class="fas fa-download"></i> 7 Freebies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Resources -->
+    <section class="section" id="resources">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Popular Design Resources</h2>
+                <p>Free downloads and tools to accelerate your design workflow</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="resource-img">
+                        <img src="resource-psd.jpg" alt="Instagram Templates">
+                        <span class="resource-badge">Free</span>
+                    </div>
+                    <div class="resource-content">
+                        <h3>50 Social Media Template PSDs</h3>
+                        <p>Complete set of customizable templates for Instagram, Facebook, and Twitter posts.</p>
+                        <a href="#" class="btn">Download Now</a>
+                        <div class="resource-meta">
+                            <span><i class="fas fa-download"></i> 2,154</span>
+                            <span><i class="fas fa-file"></i> PSD</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="resource-img">
+                        <img src="resource-fonts.jpg" alt="Font Bundle">
+                        <span class="resource-badge">Free</span>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Premium Font Bundle (50 Fonts)</h3>
+                        <p>Collection of professional fonts for commercial use including sans, serif and display.</p>
+                        <a href="#" class="btn">Download Now</a>
+                        <div class="resource-meta">
+                            <span><i class="fas fa-download"></i> 3,892</span>
+                            <span><i class="fas fa-file"></i> OTF/TTF</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="resource-img">
+                        <img src="resource-textures.jpg" alt="Textures Pack">
+                        <span class="resource-badge">Premium</span>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Ultimate Texture Pack (200+ Items)</h3>
+                        <p>High-resolution textures for backgrounds, overlays and design elements.</p>
+                        <a href="#" class="btn-secondary">Get Premium</a>
+                        <div class="resource-meta">
+                            <span><i class="fas fa-download"></i> 1,542</span>
+                            <span><i class="fas fa-file"></i> JPG/PNG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths -->
+    <section class="section learning-paths">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Structured Learning Paths</h2>
+                <p>Follow our step-by-step roadmaps to master graphic design systematically</p>
+            </div>
+            
+            <div class="paths-container">
+                <div class="path-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="path-header">
+                        <div class="path-title">
+                            <div class="path-number">1</div>
+                            <h3>Beginner Graphic Designer</h3>
+                        </div>
+                        <div class="path-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="path-content">
+                        <div class="path-steps">
+                            <div class="path-step">
+                                <h4>Design Fundamentals</h4>
+                                <p>Learn core principles of layout, color theory, typography and composition.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Photoshop Basics</h4>
+                                <p>Master essential tools, layers, selections and photo editing techniques.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Illustrator Essentials</h4>
+                                <p>Create vector graphics, logos and illustrations with precision.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Simple Projects</h4>
+                                <p>Apply your skills to real design projects like social media graphics.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 20px;">Start Beginner Path</a>
+                    </div>
+                </div>
+                
+                <div class="path-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="path-header">
+                        <div class="path-title">
+                            <div class="path-number">2</div>
+                            <h3>Intermediate Designer</h3>
+                        </div>
+                        <div class="path-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="path-content">
+                        <div class="path-steps">
+                            <div class="path-step">
+                                <h4>Advanced Photoshop</h4>
+                                <p>Photo manipulation, compositing and advanced retouching techniques.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Brand Identity Systems</h4>
+                                <p>Develop complete brand guidelines including logos, colors and typography.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Print Design</h4>
+                                <p>Create business cards, brochures and other print materials with proper bleeds.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Client Projects</h4>
+                                <p>Work through real client briefs and build your portfolio.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 20px;">Start Intermediate Path</a>
+                    </div>
+                </div>
+                
+                <div class="path-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="path-header">
+                        <div class="path-title">
+                            <div class="path-number">3</div>
+                            <h3>Advanced Professional</h3>
+                        </div>
+                        <div class="path-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="path-content">
+                        <div class="path-steps">
+                            <div class="path-step">
+                                <h4>Motion Graphics</h4>
+                                <p>Animate your designs with After Effects for social media and presentations.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>3D Design Basics</h4>
+                                <p>Create dimensional designs and mockups using 3D tools in Photoshop.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Design Systems</h4>
+                                <p>Build comprehensive design systems for large-scale projects.</p>
+                            </div>
+                            <div class="path-step">
+                                <h4>Freelance Business</h4>
+                                <p>Learn pricing, contracts and client management for design businesses.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 20px;">Start Advanced Path</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Tools -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Essential Design Tools</h2>
+                <p>Master the software and apps professional designers use daily</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tool-icon">
+                        <i class="fab fa-adobe"></i>
+                    </div>
+                    <h3>Adobe Photoshop</h3>
+                    <p>The industry standard for photo editing and digital painting.</p>
+                </div>
+                
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="tool-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Adobe Illustrator</h3>
+                    <p>Create vector graphics, logos and illustrations with precision.</p>
+                </div>
+                
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Adobe InDesign</h3>
+                    <p>Professional layout software for print and digital publishing.</p>
+                </div>
+                
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tool-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Canva</h3>
+                    <p>User-friendly design tool for quick social media graphics.</p>
+                </div>
+                
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="tool-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Figma</h3>
+                    <p>Collaborative interface design tool for teams.</p>
+                </div>
+                
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tool-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Procreate</h3>
+                    <p>Powerful digital painting app for iPad artists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Success Stories</h2>
+                <p>How our graphic design courses transformed careers</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-text">
+                        I went from zero design skills to landing my first freelance client in just 3 months! The Photoshop tutorials were so clear and practical. Now I earn $2,000+ monthly from design projects.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="testimonial-1.jpg" alt="Jamie L.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Jamie L.</h4>
+                            <p>Freelance Designer</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="testimonial-text">
+                        The branding course completely changed how I approach design. I rebranded our family business and we saw a 40% increase in sales within two months. The color theory lessons were game-changing!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="testimonial-2.jpg" alt="Marcus T.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Marcus T.</h4>
+                            <p>Small Business Owner</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-text">
+                        After completing the UI/UX path, I landed a job at a tech startup with double my previous salary. The portfolio-building exercises were exactly what hiring managers wanted to see.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="testimonial-3.jpg" alt="Sophia K.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sophia K.</h4>
+                            <p>UI Designer</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="container">
+        <div class="newsletter" data-aos="fade-up">
+            <div class="newsletter-content">
+                <h2>Get Weekly Design Tips & Freebies</h2>
+                <p>Join 10,000+ designers receiving exclusive resources and tutorials!</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="skills.html">Skills Hubs</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Skill Hubs</h3>
+                    <ul>
+                        <li><a href="graphics.html">Graphics Design</a></li>
+                        <li><a href="it.html">IT Literacy</a></li>
+                        <li><a href="programming.html">Programming</a></li>
+                        <li><a href="video.html">Videography</a></li>
+                        <li><a href="photo.html">Photography</a></li>
+                        <li><a href="repair.html">Tech Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Skill Street, Digital City</p>
+                        <p><i class="fas fa-envelope"></i> contact@macfordskills.com</p>
+                        <p><i class="fas fa-phone-alt"></i> +1 (234) 567-8910</p>
+                    </div>
+                    
+                    <h3 style="margin-top: 25px;">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Macford Skills. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.querySelectorAll('.mobile-nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('overlay');
+        
+        mobileNavToggle.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+        });
+        
+        // Close mobile menu when clicking on overlay
+        overlay.addEventListener('click', () => {
+            mobileNavToggle.forEach(toggle => {
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        });
+        
+        // Mobile dropdown toggle
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const dropdown = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                dropdown.classList.toggle('active');
+                if (dropdown.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Learning Path Toggle
+        const pathItems = document.querySelectorAll('.path-item');
+        
+        pathItems.forEach(item => {
+            const header = item.querySelector('.path-header');
+            
+            header.addEventListener('click', () => {
+                item.classList.toggle('active');
+                
+                // Close other open paths
+                pathItems.forEach(i => {
+                    if (i !== item && i.classList.contains('active')) {
+                        i.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Newsletter Form Submission
+        const newsletterForm = document.getElementById('newsletterForm');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('input').value;
+                
+                // Here you would typically send the email to your server
+                // For demo purposes, we'll just show an alert
+                alert(`Thank you for subscribing with ${email}! You'll receive our next design update.`);
+                newsletterForm.reset();
+            });
+        }
+        
+        // Sticky Header on Scroll
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.height = '70px';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.height = '80px';
+            }
+        });
+    </script>
+</body>
+</html>
